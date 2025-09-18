@@ -24,5 +24,3 @@ Whether you're a Center of Excellence leader, IT admin, or solution architect, y
 | [Lab 4](docs/labs/lab4/Readme.md) | 2:00 PM | Ashish Neeraj | Secure external websites |
 | [Lab 5](docs/labs/lab5/Readme.md) | TBD | Casey, Prabhat, Marcel | Automated Test |
 | - | 3:30 PM | All | AMA |
-
-*All times are local — add a timezone if you want to make the schedule absolute.*
