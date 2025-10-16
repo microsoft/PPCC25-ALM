@@ -89,6 +89,55 @@ flowchart LR
     class C projectStyle
 ```
 
-> **Note:** It's not possible to generate traditional source code from runtime artifacts in a solution. Traditional source code must be maintained in a repository by the developer as part of their development workflow. 
+> **Note:** It's not possible to generate traditional source code from runtime artifacts in a solution. Traditional source code must be maintained in a repository by the developer as part of their development workflow.
+
+---
+
+## 📥 Task 1: Import and commit a solution in your dev environment
+
+In this task, we will work with the **Solution binary package** (.zip format) as defined earlier in our abstractions. This is the packaged format used for importing and exporting solutions between Power Platform environments.
+
+### Step 1: Import the solution into Power Apps
+
+1. **Navigate to the Power Apps maker portal**
+   - Go to [make.powerapps.com](https://make.powerapps.com)
+   - Select your development environment
+
+2. **Access the solution import feature**
+   - In the left navigation, click on **Solutions**
+   - Click **Import solution** at the top of the page
+
+3. **Upload the solution file**
+   - Click **Choose File** or **Browse**
+   - Navigate to the `assets` folder in this repository
+   - Select the solution `.zip` file provided for this lab
+   - Click **Next**
+
+4. **Configure import settings**
+   - Review the solution information
+   - Choose import options as needed (typically keep defaults)
+   - Click **Import**
+
+5. **Wait for import completion**
+   - Monitor the import progress
+   - Verify the solution appears in your Solutions list
+
+### Step 2: Commit the solution using Power Platform Git integration
+
+1. **Enable Git integration** (if not already configured)
+   - In the Solutions area, select your imported solution
+   - Click **Settings** > **Git integration**
+   - Connect to your repository and branch
+
+2. **Commit the solution to source control**
+   - Go to **Source control** tab in your solution
+   - Add a commit message: "Initial import of [solution name]"
+   - Click **Commit** to save the solution to your Git repository
+
+3. **Verify the commit**
+   - Check your Git repository to confirm the solution files were committed
+   - Review the folder structure created by the Power Platform Git integration
+
+> **Expected outcome:** Your solution is now imported into your development environment and committed to source control as an unpacked solution format. 
 
 
