@@ -9,7 +9,7 @@ In this lab, you will go through the following tasks:
 1. [Import and commit a solution in your dev environment](#-task-1-import-and-commit-a-solution-in-your-dev-environment)
 1. [Edit your solution](#-task-2-edit-your-solution)
 1. [Work as a team in multiple environments](#-task-3-work-as-a-team-in-multiple-environments)
-1. Create a new agent.
+1. [Create a new agent](#-task-4-create-a-new-agent)
 
 ## 💻 Solution is your Source Code
 
@@ -348,6 +348,83 @@ In this task, we will simulate team development using multiple Power Platform en
 
 > **Expected outcome:** You've successfully demonstrated team development with separate environments and branches, then merged changes using standard Git workflows.
 
-> **Key learning:** The 1:1 environment-to-branch relationship keeps development organized and makes it easier to track which changes come from which developer or environment. 
+> **Key learning:** The 1:1 environment-to-branch relationship keeps development organized and makes it easier to track which changes come from which developer or environment.
+
+---
+
+## 🤖 Task 4: Create a new agent
+
+In this final task, we will create a Microsoft Copilot Studio (MCS) agent and configure it to use Dataverse tables as a knowledge source. This demonstrates how AI agents integrate into the Power Platform ALM lifecycle alongside apps and flows.
+
+### Step 1: Create a new Copilot Studio agent
+
+1. **Navigate to Copilot Studio**
+   - Go to [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com)
+   - Ensure you're in the same environment as your solution
+   - Click **Create** > **New agent**
+
+2. **Configure the agent**
+   - **Name**: Give your agent a descriptive name (e.g., "Lab Solution Assistant")
+   - **Description**: Add a brief description of the agent's purpose
+   - **Language**: Select your preferred language
+   - Click **Create** to initialize the agent
+
+3. **Basic agent setup**
+   - Review the default greeting and system message
+   - Customize the agent's personality and tone if desired
+   - Test the basic conversation flow
+
+### Step 2: Add Dataverse tables as knowledge source
+
+1. **Access Knowledge sources**
+   - In your agent, navigate to **Knowledge** section
+   - Click **Add knowledge** or **+ Add source**
+
+2. **Connect to Dataverse**
+   - Select **Dataverse** as the knowledge source type
+   - Choose **Tables** from your current environment
+   - Select the tables that were imported with your solution
+   - Configure access permissions as needed
+
+3. **Configure knowledge source settings**
+   - Set up how the agent should use the table data
+   - Configure any filters or specific columns to include/exclude
+   - Test the knowledge source connection
+
+### Step 3: Test the agent with Dataverse knowledge
+
+1. **Test knowledge integration**
+   - Use the **Test** panel in Copilot Studio
+   - Ask questions that should trigger responses from your Dataverse tables
+   - Verify the agent can access and use the table data appropriately
+
+2. **Refine the agent behavior**
+   - Adjust the agent's instructions based on test results
+   - Fine-tune how it presents information from Dataverse
+   - Test edge cases and error scenarios
+
+### Step 4: Add agent to your solution and commit
+
+1. **Add agent to solution**
+   - Navigate back to **Solutions** in the Power Apps maker portal
+   - Open your working solution
+   - Click **Add existing** > **Chatbot**
+   - Select your newly created agent
+   - Add it to the solution
+
+2. **Commit the agent to source control**
+   - Go to **Source control** tab in your solution
+   - You should see the agent files in the pending changes
+   - Add commit message: "Added Copilot Studio agent with Dataverse knowledge source"
+   - Click **Commit**
+
+3. **Verify agent in repository**
+   - Check your Git repository to see the agent files
+   - Review the agent's metadata and configuration files
+   - Note how the agent integrates with your overall solution structure
+
+> **Expected outcome:** You have successfully created a Copilot Studio agent that uses Dataverse tables as a knowledge source, integrated it into your Power Platform solution, and committed it to source control as part of your ALM workflow.
+
+> **Key insight:** AI agents are now first-class citizens in Power Platform ALM, following the same source control patterns as apps, flows, and other solution components. 
 
 
