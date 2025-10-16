@@ -8,7 +8,7 @@ In this lab, you will go through the following tasks:
 
 1. [Import and commit a solution in your dev environment](#-task-1-import-and-commit-a-solution-in-your-dev-environment)
 1. [Edit your solution](#-task-2-edit-your-solution)
-1. Work as a team in multiple environments.
+1. [Work as a team in multiple environments](#-task-3-work-as-a-team-in-multiple-environments)
 1. Create a new agent.
 
 ## 💻 Solution is your Source Code
@@ -232,6 +232,122 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
 
 > **Expected outcome:** You understand how to work with both maker portal and repository, handle reverse sync, and resolve conflicts by choosing a source of truth.
 
-> **Key learning**: More complex merge scenarios and team collaboration patterns will be covered in the next lab. 
+> **Key learning**: More complex merge scenarios and team collaboration patterns will be covered in the next lab.
+
+---
+
+## 👥 Task 3: Work as a team in multiple environments
+
+In this task, we will simulate team development using multiple Power Platform environments. This demonstrates how different developers can work on the same solution using separate development environments while maintaining code synchronization through Git.
+
+**Prerequisites:** You'll need access to a second development environment for this exercise.
+
+### Step 1: Export solution from your current environment
+
+1. **Navigate to your current development environment**
+   - Go to [make.powerapps.com](https://make.powerapps.com)
+   - Ensure you're in the environment where you completed Tasks 1 and 2
+
+2. **Export the solution**
+   - Go to **Solutions**
+   - Select your working solution
+   - Click **Export**
+   - Choose **Managed** or **Unmanaged** (typically choose **Unmanaged** for development)
+   - Click **Next** and then **Export**
+   - Download the solution .zip file
+
+### Step 2: Set up the second development environment
+
+1. **Switch to your second development environment**
+   - In the Power Apps maker portal, use the environment selector
+   - Choose your second development environment
+   - If you don't have one, create a new developer environment
+
+2. **Import the solution**
+   - Click **Solutions** > **Import solution**
+   - Upload the .zip file you exported in Step 1
+   - Configure import settings (keep defaults)
+   - Click **Import** and wait for completion
+
+### Step 3: Connect to Git repository with a new branch
+
+1. **Create a new branch for the second environment**
+   - The new branch will represent the second developer's workspace
+   - Branch name suggestion: `dev-environment-2` or `developer-2-workspace`
+
+2. **Configure Git integration**
+   - In your imported solution, go to **Settings** > **Git integration**
+   - Connect to the same repository you used in previous tasks
+   - **Important:** Create and select a new branch (not the main branch)
+   - Complete the Git integration setup
+
+3. **Verify branch connection**
+   - Confirm you're connected to your new branch
+   - Check that the solution can commit to this separate branch
+   - This simulates a second developer working independently
+
+**Important concept:** In Power Platform, we recommend maintaining a **1:1 relationship between environment and branch**. Each development environment should be connected to its own dedicated Git branch for clean separation of work.
+
+### Step 4: Make changes in Development Environment 1
+
+1. **Switch back to your first development environment**
+   - Return to the environment used in Tasks 1 and 2
+   - Open your solution and navigate to the Canvas app
+
+2. **Modify a control label**
+   - Open the Canvas app in edit mode
+   - Select any control with a label (button, text label, etc.)
+   - Change the text property to something new (e.g., "Updated in Dev 1")
+   - Save and publish the app
+
+3. **Commit the changes**
+   - Go to **Source control** tab
+   - Add commit message: "Updated control label in dev environment 1"
+   - Click **Commit** to save to your first branch
+
+### Step 5: Make changes in Development Environment 2
+
+1. **Switch to your second development environment**
+   - Navigate to your second development environment
+   - Open the same solution and Canvas app
+
+2. **Add a new screen**
+   - In the Canvas app designer, click **New screen**
+   - Choose a screen template or create a blank screen
+   - Add some basic controls to the new screen (optional)
+   - Save and publish the app
+
+3. **Commit the changes**
+   - Go to **Source control** tab
+   - Add commit message: "Added new screen in dev environment 2"
+   - Click **Commit** to save to your second branch
+
+### Step 6: Merge branches using VS Code
+
+1. **Open repository in VS Code**
+   - Navigate to your GitHub repository
+   - Press `.` to open vscode.dev (or use GitHub Codespaces)
+   - Or clone locally and use desktop VS Code
+
+2. **Create Pull Request or merge directly**
+   - **Option A: Pull Request (Recommended)**
+     - Create a Pull Request from `dev-environment-2` to `dev-environment-1`
+     - Review the changes in both branches
+     - Merge the PR after review
+   
+   - **Option B: Direct merge using Git commands**
+     - Switch to your first branch: `git checkout dev-environment-1`
+     - Merge the second branch: `git merge dev-environment-2`
+     - Resolve any conflicts if they arise
+     - Push the merged changes: `git push origin dev-environment-1`
+
+3. **Handle any merge conflicts**
+   - If conflicts occur in Canvas app files, review carefully
+   - Choose the appropriate resolution strategy
+   - Remember: Power Platform files can be complex to merge
+
+> **Expected outcome:** You've successfully demonstrated team development with separate environments and branches, then merged changes using standard Git workflows.
+
+> **Key learning:** The 1:1 environment-to-branch relationship keeps development organized and makes it easier to track which changes come from which developer or environment. 
 
 
