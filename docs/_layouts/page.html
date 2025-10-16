@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<!-- Mermaid.js -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version | default: '10.6.1' }}/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      themeVariables: {
+        primaryColor: '#1976d2',
+        primaryTextColor: '#000',
+        primaryBorderColor: '#1976d2',
+        lineColor: '#333',
+        secondaryColor: '#f3e5f5',
+        tertiaryColor: '#e8f5e8'
+      }
+    });
+    
+    // Find all mermaid code blocks and render them
+    const mermaidElements = document.querySelectorAll('code.language-mermaid');
+    mermaidElements.forEach((element, index) => {
+      const graphDefinition = element.textContent;
+      const graphId = 'mermaid-' + index;
+      const graphContainer = document.createElement('div');
+      graphContainer.id = graphId;
+      graphContainer.className = 'mermaid';
+      graphContainer.textContent = graphDefinition;
+      element.parentNode.replaceWith(graphContainer);
+    });
+  });
+</script>
+
+<style>
+  /* Custom styles for Mermaid diagrams */
+  .mermaid {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  /* Ensure diagrams are responsive */
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

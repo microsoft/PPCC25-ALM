@@ -43,6 +43,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Mermaid configuration
+mermaid:
+  # Version of mermaid library
+  # Visit https://github.com/mermaid-js/mermaid/releases for latest version
+  version: "10.6.1"
+
 # Exclude from processing
 exclude:
   - README.md
