@@ -1,9 +1,6 @@
 title: "Lifecycle Mastery: Power Platform ALM for Agents"
 description: "A hands-on workshop demonstrating modern ALM for Power Platform"
 
-# Remote theme
-remote_theme: pages-themes/slate@v0.2.0
-
 # Markdown settings
 markdown: kramdown
 highlighter: rouge
