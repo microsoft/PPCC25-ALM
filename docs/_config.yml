@@ -1,53 +1,17 @@
 title: "Lifecycle Mastery: Power Platform ALM for Agents"
 description: "A hands-on workshop demonstrating modern ALM for Power Platform with a focus on Managed Environments, solution-aware pipelines, and agent-ready governance patterns."
-url: "https://microsoft.github.io"
-baseurl: "/PPCC25-ALM"
 
 # Theme
-theme: minima
-# Alternative themes you can try:
-# theme: cayman
-# theme: architect
-# theme: leap-day
-# theme: merlot
-# theme: midnight
-# theme: minimal
-# theme: modernist
-# theme: slate
-# theme: time-machine
-# theme: tactile
+theme: jekyll-theme-cayman
 
-# Site configuration
-author:
-  name: "Microsoft Power Platform Team"
-
-# Navigation
-header_pages:
-  - index.md
-  - labs/lab1/Readme.md
-  - labs/lab2/Readme.md
-  - labs/lab3/Readme.md
-  - labs/lab4/Readme.md
-  - labs/lab5/Readme.md
-
-# Build settings
+# Basic settings
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
-# Plugins
+# Plugins (only the essential ones that GitHub Pages supports)
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
-
-# Mermaid configuration
-mermaid:
-  # Version of mermaid library
-  # Visit https://github.com/mermaid-js/mermaid/releases for latest version
-  version: "10.6.1"
 
 # Exclude from processing
 exclude:
@@ -55,33 +19,3 @@ exclude:
   - LICENSE
   - SECURITY.md
   - .gitignore
-  - vendor/
-
-# Collections (optional - for organizing content)
-collections:
-  labs:
-    output: true
-    permalink: /:collection/:name/
-
-# Default settings for pages
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: "_labs"
-      type: "labs"
-    values:
-      layout: "default"
-
-# Social links (optional)
-github_username: microsoft
-twitter_username: mspowerplatform
-
-# Analytics (optional)
-# google_analytics: UA-XXXXXXXX-X
-
-# SEO
-lang: en_US
