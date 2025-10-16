@@ -15,23 +15,23 @@ In this lab, you will go through the following tasks:
 
 For low-code makers, your **Power Platform Solution** is your source code - it's the complete description of what you're building that you can open and edit in the Solution Explorer within the maker portal.
 
-## Understanding Solution Abstractions
+## 📦 Understanding Solution Abstractions
 
 The term "solution" can be confusing because it represents different levels of abstraction depending on the context:
 
-### 🔄 Three Levels of Solution Abstraction
+### Three Levels of Solution Abstraction
 
 1. **Solution Project (.cdsproj)** - Traditional Source Code
    - This is the traditional developer source code format
    - Contains project files, references, and build configurations
    - Used by professional developers with Visual Studio and MS Build
 
-2. **Unpacked Solution** - Metadata and Runtime Artifacts
+1. **Unpacked Solution** - Metadata and Runtime Artifacts
    - Collection of individual files: `.msapp`, `.xml`, `.js`, `.dll` files
    - Human-readable metadata that describes your Power Platform components
    - Can be version controlled and merged like traditional source code
 
-3. **Solution Package (.zip)** - Binary Package
+1. **Solution Package (.zip)** - Binary Package
    - Compressed binary version of the metadata and runtime artifacts
    - Used for import/export operations between environments
    - What you see when you export a solution from the Power Platform admin center
@@ -59,7 +59,8 @@ flowchart LR
         ◦ app.pa.yaml
         ◦ screen.pa.yaml
     • MyPlugin.dll
-    • MyTable.yml
+    • PCFbundle.js
+    • MyTable.(yml or xml)
     ...`"]
     
     C["`🔧 **Solution Project**
@@ -69,13 +70,15 @@ flowchart LR
     Contains:
     • Project.cdsproj
     • MyPlugin.cs
+    • PCF.pcfproj
     • myPCF.ts
+    • MyCanvas.msapp
     ...`"]
     
     A -.->|Unpack| B
     B -.->|Pack| A
-    B -.->|MS Build| C
-    C -.->|Build| B
+    B -.->|Manual dev setup| C
+    C -.->|MS Build| B
     
     classDef packageStyle fill:#bbdefb,stroke:#1976d2,stroke-width:2px,color:#000
     classDef sourceStyle fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px,color:#000
@@ -86,4 +89,6 @@ flowchart LR
     class C projectStyle
 ```
 
-> Estimated time: [xx minutes]
+> **Note:** It's not possible to generate traditional source code from runtime artifacts in a solution. Traditional source code must be maintained in a repository by the developer as part of their development workflow. 
+
+
