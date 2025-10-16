@@ -1,0 +1,81 @@
+title: "Lifecycle Mastery: Power Platform ALM for Agents"
+description: "A hands-on workshop demonstrating modern ALM for Power Platform with a focus on Managed Environments, solution-aware pipelines, and agent-ready governance patterns."
+url: "https://microsoft.github.io"
+baseurl: "/PPCC25-ALM"
+
+# Theme
+theme: minima
+# Alternative themes you can try:
+# theme: cayman
+# theme: architect
+# theme: leap-day
+# theme: merlot
+# theme: midnight
+# theme: minimal
+# theme: modernist
+# theme: slate
+# theme: time-machine
+# theme: tactile
+
+# Site configuration
+author:
+  name: "Microsoft Power Platform Team"
+
+# Navigation
+header_pages:
+  - index.md
+  - labs/lab1/Readme.md
+  - labs/lab2/Readme.md
+  - labs/lab3/Readme.md
+  - labs/lab4/Readme.md
+  - labs/lab5/Readme.md
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - SECURITY.md
+  - .gitignore
+  - vendor/
+
+# Collections (optional - for organizing content)
+collections:
+  labs:
+    output: true
+    permalink: /:collection/:name/
+
+# Default settings for pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "_labs"
+      type: "labs"
+    values:
+      layout: "default"
+
+# Social links (optional)
+github_username: microsoft
+twitter_username: mspowerplatform
+
+# Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# SEO
+lang: en_US
