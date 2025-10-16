@@ -1,3 +1,7 @@
+---
+layout: lab
+---
+
 # 🧪 Lab 2: Building Power Platform Solutions
 
 Replace this paragraph with a short description of the lab: goals, expected outcomes, and any high-level notes.
