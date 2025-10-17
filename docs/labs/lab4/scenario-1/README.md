@@ -1,5 +1,21 @@
 # Lab 4: Scenario 1 - Power Pages Site (Enhanced Data Model)
 
+## Table of Contents
+
+- [Pre-requisites](#pre-requisites)
+- [Overview](#overview)
+- [Steps](#steps)
+  1. [Configure Azure DevOps](#configure-azure-devops)
+  1. [Create solution and connect to Git](#create-solution-and-connect-to-git)
+  1. [Create Power Pages site](#create-power-pages-site)
+  1. [Add site to solution](#add-site-to-solution)
+  1. [Configure Power Pipelines](#configure-power-pipelines)
+  1. [Deploy to Prod Environment](#deploy-to-prod-environment)
+  1. [Activate Site in ProdEnvironment](#activate-site-in-prodenvironment)
+  1. [Committing changes to Source Control](#committing-changes-to-source-control)
+- [Steps to enable Managed Environment](#steps-to-enable-managed-environment)
+
+
 ## Pre-requisites
 
 1. Install VS Code Desktop from this [download link](https://code.visualstudio.com/download).
@@ -63,6 +79,28 @@ In this scenario, we will be doing the following:
 
     ![Create New Solution](images/create-new-solution.png)
 
+### Add site to solution
+
+1. Click on **Objects** from the left menu.
+
+    ![Objects Menu](images/objects-menu.png)
+
+1. Click on **Add Existing** button and select **Site** from the dropdown.
+
+    ![Add Existing Site](images/add-existing-site.png)
+
+1. Select the site and click on **Next**.
+
+1. Select **Include All Objects** and click on **Add**.
+
+    ![Include All Objects](images/include-all-objects.png)
+
+    _Note: You can also include specific objects by clicking **Edit Objects** and selecting them individually._
+
+1. Once the site and its related objects are added to the solution, you will see something like below:
+
+    ![Solution with Site](images/solution-with-site.png)
+
 ### Configure Power Pipelines
 
 1. Select the newly created solution and click on **Pipelines** from the left menu.
@@ -96,6 +134,97 @@ In this scenario, we will be doing the following:
 1. The deployment will start. Wait for the deployment to complete.
 
     ![Deployment in Progress](images/deployment-in-progress.png)
+
+1. Once the deployment is complete, switch to **ProdEnvironment** from top right corner in Power Pages Maker Studio.
+
+    ![Switch Environment](images/switch-environment.png)
+
+### Activate Site in ProdEnvironment
+
+1. Click on **Inactive Sites** tab to view the list of inactive sites.
+
+    ![Inactive Sites](images/inactive-sites.png)
+
+1. Click on **Reactive** button to activate the site and then click on **Done**.
+
+    ![Reactivate Site](images/reactivate-site.png)
+
+1. _Optional:_ Preview the site by clicking on **Preview** button.
+
+    ![Preview Site](images/preview-site.png)
+
+## Committing changes to Source Control
+
+1. Go back to **DevEnvironment** and navigate to **Solutions Explorer** and select the **PPCCALMDev** solution.
+
+1. Select **Source Control** from the left menu.
+
+    ![Source Control Menu](images/source-control-menu.png)
+
+1. Verify that the **Changes** tab has the some changes listed and click on **Commit** button.
+
+    ![Commit Changes](images/commit-changes.png)
+
+1. Enter a commit message and click on **Commit** button.
+
+    ![Enter Commit Message](images/enter-commit-message.png)
+
+1. After the commit is successful, click on the commit id to navigate to Azure DevOps and see the changes reflected in the repository.
+
+    ![View Commit in Azure DevOps](images/view-commit-in-ado.png)
+
+1. Notice that there are 3 folders created in the repository:
+    1. **powerpagesites** - Contains the Power Pages site related files
+    1. **solutions** - Contains the solution related files
+    1. **publishers** - Contains the publisher information
+
+    [![Repository Structure](images/repo-structure.png)
+
+### Cloning the repository locally
+
+1. Click on **Files** from the left menu in Azure DevOps to go to the repository view.
+
+    ![Repository View](images/repo-view.png)
+
+1. Click on **Clone** button and then click on **Clone in VSCode**.
+
+    ![Clone Button](images/clone-button.png)
+
+    ![Clone in VSCode](images/clone-in-vscode.png)
+
+1. This will open VS Code Desktop and prompt for the local path to clone the repository.
+
+1. It will ask for authentication, provide your Azure DevOps credentials.
+
+1. If asked to automatically sign-in, select **No, this app only**.
+
+   ![VS Code Sign-in](images/vscode-signin.png)
+
+1. Click on **Open** to open the cloned repository in VS Code.
+
+    ![Cloned Repository in VS Code](images/cloned-repo-vscode.png)
+
+### Editing the site in VS Code
+
+1. Open **Home.webpage.copy.html** file and use GitHub Copilot to add a welcome message to the home page.
+
+    ![Edit Home Page](images/edit-home-page.png)
+
+1. Once the edits are done, save the file and commit and push the changes.
+
+    ![Commit Changes in VS Code](images/commit-changes-vscode.png)
+
+### Pulling changes in Solution Explorer
+
+1. Go back to **Power Pages Maker Studio** in **DevEnvironment** and navigate to **Solutions Explorer**.
+
+1. Select **Source Control** from the left menu and click on **Check for updates** button. _This might take a while._
+
+    ![Check for Updates](images/check-for-updates.png)
+
+1. Click on **Pull** button to pull the latest changes in the solution. _This might take a while._
+
+    ![Pull Changes](images/pull-changes.png)
 
 ## Steps to enable Managed Environment
 
