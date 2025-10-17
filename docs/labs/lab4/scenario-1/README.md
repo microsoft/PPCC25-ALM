@@ -3,7 +3,7 @@
 ## Pre-requisites
 
 1. Install VS Code Desktop from this [download link](https://code.visualstudio.com/download).
-1. Ensure EDM is enabled for your environment. (This should be enabled by default).
+1. Following steps will work on EDM environments. (This should be enabled by default).
 
 ## Overview
 
@@ -14,6 +14,9 @@ In this scenario, we will be doing the following:
 ## Steps
 
 1. Setup two managed environments, **DevEnvironment** and **ProdEnvironment**. Follow [these](#steps-to-enable-managed-environment) steps to enable managed environment.
+
+### Configure Azure DevOps
+
 1. Navigate to [Azure DevOps Portal](https://aex.dev.azure.com/) and create a new organization.
 
     ![Create Azure DevOps Organization](images/create-ado-org.png)
@@ -25,6 +28,8 @@ In this scenario, we will be doing the following:
 1. In the new project, navigate to **Repos** and initialize it with main branch.
 
     ![Initialize Repo](images/initialize-repo.png)
+
+### Create solution and connect to Git
 
 1. In a new tab, open [Power Pages Maker Studio](https://make.powerpages.microsoft.com/) and select **DevEnvironment** from top right corner.
 
@@ -41,6 +46,8 @@ In this scenario, we will be doing the following:
 1. Use above created Azure DevOps project to connect to git. You can name the folder as applicable.
 
     ![Connect to Git Repo](images/connect-to-git-repo.png)
+
+### Create Power Pages site
 
 1. After successful connection, navigate to home and proceed to create your first power pages site **PPCC ALM Dev** using blank template.
 
