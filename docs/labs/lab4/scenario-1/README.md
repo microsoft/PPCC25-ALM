@@ -93,6 +93,10 @@ In this scenario, we will be doing the following:
 
     ![Deploy Solution](images/deploy-solution.png)
 
+1. The deployment will start. Wait for the deployment to complete.
+
+    ![Deployment in Progress](images/deployment-in-progress.png)
+
 ## Steps to enable Managed Environment
 
 1. Navigate to Power Platform Admin Center (PPAC) at <https://admin.powerplatform.microsoft.com/manage/environments>
