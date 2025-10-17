@@ -55,11 +55,43 @@ In this scenario, we will be doing the following:
 
     ![Create Power Pages Site 2](images/create-power-pages-site-2.png)
 
-1. Once the **PPCC ALM Dev** site is ready, navigate back to Solutions Explorer and create a new solution named **PPCCALMDev**.
+1. Once the **PPCC ALM Dev** site is ready, navigate back to Solutions Explorer and click on **New Solution** to create a new solution.
 
     ![New Solution](images/new-solution.png)
 
-1.
+1. Name the solution **PPCCALMDev**, select **CDS Default Publisher** from Publisher dropdown and click **Create**.
+
+    ![Create New Solution](images/create-new-solution.png)
+
+### Configure Power Pipelines
+
+1. Select the newly created solution and click on **Pipelines** from the left menu.
+
+    ![Pipelines Menu](images/pipelines-menu.png)
+
+1. Click on **Create Pipeline** button to create a new pipeline.
+
+    ![Create Pipeline](images/create-pipeline.png)
+
+1. Name the pipeline **PPCC ALM Workshop pipeline** and select **ProdEnvironment** as the target environment and click on **Save**.
+
+    ![Create Pipeline](images/create-pipeline-2.png)
+
+1. Once the pipeline is created, you will see something like below:
+
+    ![Pipeline Created](images/pipeline-created.png)
+
+### Deploy to Prod Environment
+
+1. Click on **Deploy Here** button to deploy the solution to ProdEnvironment.
+
+    ![Deploy Here](images/deploy-here.png)
+
+1. On the fly out panel, click on **Deploy** button to start the deployment.
+
+1. After the initial verification of deployment is complete, you will get an option to click **“Deploy** on the Summary Panel for Power Pipelines **Deploying Solution** panel.
+
+    ![Deploy Solution](images/deploy-solution.png)
 
 ## Steps to enable Managed Environment
 
