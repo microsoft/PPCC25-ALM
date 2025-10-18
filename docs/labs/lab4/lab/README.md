@@ -183,7 +183,7 @@ In this scenario, we will be doing the following:
     1. **solutions** - Contains the solution related files
     1. **publishers** - Contains the publisher information
 
-    [![Repository Structure](images/repo-structure.png)
+    ![Repository Structure](images/repo-structure.png)
 
 ### Cloning the repository locally
 
