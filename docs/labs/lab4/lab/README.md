@@ -295,7 +295,7 @@ In this scenario, we will be doing the following:
 
     ![Local Login Enabled](images/local-login-enabled.png)
 
-1. Now, switch to **ProdEnvironment** from top right corner in **Power Pages Maker Studio** and preview the site.
+1. Now, go back to **Power Pages Maker Studio** and switch to **ProdEnvironment** from top right corner and preview the site.
 
 1. Click on **Sign In** button to verify that the local login is disabled.
 
