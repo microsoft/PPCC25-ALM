@@ -13,8 +13,13 @@
   1. [Deploy to Prod Environment](#deploy-to-prod-environment)
   1. [Activate Site in ProdEnvironment](#activate-site-in-prodenvironment)
   1. [Committing changes to Source Control](#committing-changes-to-source-control)
+  1. [Cloning the repository locally](#cloning-the-repository-locally)
+  1. [Editing the site in VS Code](#editing-the-site-in-vs-code)
+  1. [Pulling changes in Solution Explorer](#pulling-changes-in-solution-explorer)
+  1. [Updating Environment Variables](#updating-environment-variables)
+  1. [Deploy the updated solution to ProdEnvironment](#deploy-the-updated-solution-to-prodenvironment)
+  1. [Verify changes](#verify-changes)
 - [Steps to enable Managed Environment](#steps-to-enable-managed-environment)
-
 
 ## Pre-requisites
 
@@ -225,6 +230,76 @@ In this scenario, we will be doing the following:
 1. Click on **Pull** button to pull the latest changes in the solution. _This might take a while._
 
     ![Pull Changes](images/pull-changes.png)
+
+### Updating Environment Variables
+
+1. From the **Active Sites** tab, click on **Power Pages Management** for your site.
+
+    ![Power Pages Management](images/power-pages-management.png)
+
+1. Click on Site Settings.
+
+    ![Site Settings](images/site-settings.png)
+
+1. Search for the setting **Authentication/Registration/LocalLoginEnabled** and click on it to open.
+
+1. Change the value of **Source** to **Environment Variable**.
+
+    ![Change Source to Environment Variable](images/change-source-to-env-var.png)
+
+1. Create a new environment variable by selecting the text box and clicking on **New**.
+
+    ![Create New Environment Variable](images/create-new-env-var.png)
+
+1. Click on **Discard Changes** to open the environment variable creation panel.
+
+1. Create new environment variable with **Schema Name** and **Display Name** as **LocalLoginEnabled** and set the default value to **True**. Click on **Save & Close**.
+
+    ![Create Environment Variable](images/create-env-var.png)
+
+1. Now, again change the value of **Source** to **Environment Variable** and search for **Local** and select the newly created environment variable from the dropdown. Click on **Save & Close**.
+
+    ![Select Environment Variable](images/select-env-var.png)
+
+1. Navigate back to **Power Pages Maker Studio** and open **Solutions Explorer** and select the **PPCCALMDev** solution.
+
+1. Add the newly created environment variable to the solution by clicking on **Add Existing** > **Environment Variable**.
+
+    ![Add Existing Environment Variable](images/add-existing-env-var.png)
+
+1. Select **LocalLoginEnabled** from the list and click on **Next** and then click on **Add**.
+
+    ![Select Environment Variable](images/select-env-var-to-add.png)
+
+1. The environment variable will be added to the solution.
+
+    ![Environment Variable Added](images/env-var-added.png)
+
+### Deploy the updated solution to ProdEnvironment
+
+1. Go to **Pipelines** tab and click on **Deploy Here** button to deploy the updated solution to **ProdEnvironment**.
+
+1. Click on **Next** and you'll be asked to select a value for the environment variable. Select **No** and click on **Next**.
+
+    ![Set Environment Variable Value](images/set-env-var-value.png)
+
+1. Click on **Deploy** to start the deployment process and wait for the deployment to complete.
+
+### Verify changes
+
+1. Open the website preview in **DevEnvironment** by clicking on **Preview** -> **Desktop**.
+
+    ![Preview Site in DevEnvironment](images/preview-site-devenv.png)
+
+1. Click on **Sign In** button to verify that the local login is enabled.
+
+    ![Local Login Enabled](images/local-login-enabled.png)
+
+1. Now, switch to **ProdEnvironment** from top right corner in **Power Pages Maker Studio** and preview the site.
+
+1. Click on **Sign In** button to verify that the local login is disabled.
+
+    ![Local Login Disabled](images/local-login-disabled.png)
 
 ## Steps to enable Managed Environment
 
