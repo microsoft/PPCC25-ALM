@@ -183,7 +183,7 @@ In this scenario, we will be doing the following:
     1. **solutions** - Contains the solution related files
     1. **publishers** - Contains the publisher information
 
-    [![Repository Structure](images/repo-structure.png)
+    ![Repository Structure](images/repo-structure.png)
 
 ### Cloning the repository locally
 
@@ -295,7 +295,7 @@ In this scenario, we will be doing the following:
 
     ![Local Login Enabled](images/local-login-enabled.png)
 
-1. Now, switch to **ProdEnvironment** from top right corner in **Power Pages Maker Studio** and preview the site.
+1. Now, go back to **Power Pages Maker Studio** and switch to **ProdEnvironment** from top right corner and preview the site.
 
 1. Click on **Sign In** button to verify that the local login is disabled.
 
