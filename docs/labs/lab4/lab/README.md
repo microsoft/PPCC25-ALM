@@ -1,4 +1,4 @@
-# Lab 4: Scenario 1 - Power Pages Site (Enhanced Data Model)
+# Lab 4: ALM with Power Pages
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@
 
 In this scenario, we will be doing the following:
 
-![Flow](images/flow.png)
+![Flow](images/flow.jpg)
 
 ## Steps
 
