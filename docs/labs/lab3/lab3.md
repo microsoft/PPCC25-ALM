@@ -1,7 +1,3 @@
----
-layout: lab
----
-
 # 🚀 Lab 3: Deploy
 
 A key facet of healthy ALM is separating changes in development from those in testing and in production. Pipelines in Power Platform deploys the latest version of your solution across these environments, with the ability to add secure approvals and review changes before they're deployed. Note: in this lab you'll only deploy from development to production, but in the real world it's recommended to add an additional test stage. Other stages may also be added.
@@ -261,8 +257,10 @@ The tables here indicate triggers and actions required for each extension:
 | Gated extension | Step started trigger | Step completed trigger | Unbound action | Connection to use |
 |---|---|---|---|---|
 | Pre-export step required | OnDeploymentRequested | N/A | UpdatePreExportStepStatus | Any identity with access to update the deployment stage run record |
-| Is delegated deployment | OnApprovalStarted | OnDeploymentCompleted | | Create a connection as the service principal or pipeline stage owner as configured on the pipeline stage. The pipeline stage owner must be an owner of the service principal in Microsoft Entra ID. |
+| Is delegated deployment | OnApprovalStarted | OnDeploymentCompleted | N/A | Service principal or pipeline stage owner (must be owner of the SPN in Entra ID) |
 | Predeployment step required | OnPreDeploymentStarted | OnPreDeploymentCompleted | UpdatePreDeploymentStepStatus | Any identity with access to update the deployment stage run record |
+
+> **Note**: For delegated deployment, create a connection as the service principal or pipeline stage owner as configured on the pipeline stage. The pipeline stage owner must be an owner of the service principal in Microsoft Entra ID.
 
 Now, let's extend the Custom Host pipeline we created to include an Approval step. Once we get the approval, we will perform a Delegated deployment using an Application user.
 
