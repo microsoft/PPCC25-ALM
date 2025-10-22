@@ -1,33 +1,29 @@
-# 🚀 PPCC25 ALM Workshop
+# 🚀 Lifecycle Mastery: Managing Power Platform Assets in the Age of Agents
 
-Welcome to the **Lifecycle Mastery: Managing Power Platform Assets in the Age of Agents** workshop!
+As AI agents take center stage in Power Platform innovation, the need for robust, scalable, and secure application lifecycle management (ALM) has never been more critical. This hands-on workshop dives deep into how Managed Environments can help you master the lifecycle of apps, flows, and agents—ensuring governance and agility go hand in hand.
 
-## 📚 Workshop Materials
+You'll learn how to implement modern ALM strategies using built-in features like solution-aware pipelines, environment routing, maker onboarding policies, and data loss prevention (DLP) enforcement—all designed to support a safe and streamlined deployment experience across the development lifecycle.
 
-### Labs
-- [Lab 1: Setup](labs/lab1/Readme.md)
-- [Lab 2: Building Power Platform Solutions](labs/lab2/Readme.md)
-- [Lab 3: Environment Routing](labs/lab3/Readme.md)
-- [Lab 4: Copilot Agents](labs/lab4/Readme.md)
-- [Lab 5: Packaging & Approvals](labs/lab5/Readme.md)
+## 🎯 What you'll learn
 
-## 🎯 What You'll Learn
+- Explore how Managed Environments enhance ALM with policy-driven controls and telemetry
+- Set up and use Power Platform Pipelines for secure, automated deployments
+- Apply environment routing to guide apps and agents to the right zones
+- Learn how ALM patterns extend to Copilot Studio agents and future AI workloads
+- Get hands-on with solution packaging, approvals, and rollback strategies
 
-- Policy-driven ALM using Managed Environments
-- Secure, automated deployments with solution-aware pipelines
-- Environment routing and agent lifecycle patterns
-- Packaging, approvals, and rollback strategies
+Whether you're a Center of Excellence leader, IT admin, or solution architect, you'll leave with the tools and templates to implement lifecycle best practices that are agent-ready and enterprise-proven.
 
-## 📅 Workshop Schedule
+## 📅 Schedule
 
 | Lab | Time | Presenter(s) | Topic |
 | --- | --- | --- | --- |
-| [Lab 1](labs/lab1/Readme.md) | 9:00 AM | Casey, Prabhat | Solution and DevOps 101 |
-| [Lab 2](labs/lab2/Readme.md) | 10:30 AM | Marcel | Building Power Platform Solutions |
-| [Lab 3](labs/lab3/Readme.md) | 1:00 PM | Yash | Deploy From Source Control |
-| [Lab 4](labs/lab4/Readme.md) | 2:00 PM | Ashish Neeraj | Lifecycle Mastery in Power Pages |
-| [Lab 5](labs/lab5/Readme.md) | TBD | Casey, Prabhat, Marcel | Automated Test |
-| Lab 6 | 3:30 PM | All | AMA |
+| [Lab 1](docs/labs/lab1/Readme.md) | 9:00 AM | Casey, Prabhat | Solution and DevOps 101 |
+| [Lab 2](docs/labs/lab2/Readme.md) | 10:30 AM | Marcel | Building Power Platform Solutions |
+| [Lab 3](docs/labs/lab3/Readme.md) | 1:00 PM | Yash | Deploy From Source Control |
+| [Lab 4](docs/labs/lab4/Readme.md) | 2:00 PM | Ashish Neeraj | Lifecycle Mastery in Power Pages |
+| [Lab 5](docs/labs/lab5/Readme.md) | TBD | Casey, Prabhat, Marcel | Automated Test |
+| - | 3:30 PM | All | AMA |
 
 ## 🚀 Getting Started
 
