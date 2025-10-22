@@ -11,9 +11,9 @@ A key facet of healthy ALM is separating changes in development from those in te
 In this lab, you will go through the following tasks:
 
 1. [Create a Platform Host pipeline](#-task-1-create-a-platform-host-pipeline)
-1. [Create a Custom Host pipeline](#-task-2-create-a-custom-host-pipeline)
+1. [Create a Custom Host pipeline](#️-task-2-create-a-custom-host-pipeline)
 1. [Extend pipelines](#-task-3-extend-pipelines)
-1. [Redeploy a prior version](#-task-4-redeploy-a-prior-version)
+1. [Redeploy a prior version](#️-task-4-redeploy-a-prior-version)
 
 ---
 
