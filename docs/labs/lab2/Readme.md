@@ -143,6 +143,7 @@ You are now connect to your GIT repository!
    ![Source Control](assets/SourceControl.png)
    - Add a commit message: "Initial import of [solution name]"
    - Click **Commit** to save the solution to your Git repository
+
    ![Commit Success](assets/CommitSuccessful.png)
 
 1. **Verify the commit**
@@ -159,18 +160,226 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
 
 ### Step 1: Edit the Canvas App with YAML code
 
-1. **Open the solution in maker portal**
-   - Navigate to your imported solution
-   - Find and open the Canvas app component
-   - Switch to **Tree view** in the app designer
+1. **Open the Canvas App from Solution Explorer**
+   - Open the solution **Contoso Real Estate**
+   - In the Objects, click the Contoso Real Estate Canvas App to edit the canvas app.
+   ![Solution Explorer](assets/solutionExplorer.png)
+   - You are now in Power Apps Studio
 
 2. **Import YAML code snippet**
-   - In the app designer, select a screen or control
-   - Use **Copy** and **Paste YAML** functionality
-   - Paste the provided YAML snippet from the `assets` folder
-   - Review the changes in the app designer
+
+- Copy the YAML code bellow
+
+```yaml
+Screens:
+  scrALM:
+    Children:
+      - ScreenContainer4:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - MainContainer3:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - LinkCanvas1:
+                      Control: Link@0.0.45
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Stretch
+                        Appearance: ='LinkCanvas.Appearance'.Default
+                        AutoHeight: =true
+                        FillPortions: =1
+                        FontSize: =52
+                        LayoutMinHeight: =72
+                        Text: ="aka.ms/PPCC25-ALM"
+                        URL: ="https://aka.ms/PPCC25-ALM"
+                        VerticalAlign: =VerticalAlign.Middle
+  scrCommunityYAML:
+    Children:
+      - ScreenContainer3:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - TextCanvas3_2:
+                      Control: Text@0.0.51
+                      Properties:
+                        Height: =40
+                        Size: =24
+                        Text: "=If(\n        Hour(Now()) >= 6 && Hour(Now()) < 12, \"\U0001F324️  Good Morning, \",\n        Hour(Now()) >= 12 && Hour(Now()) < 18, \"☀️  Good Afternoon, \",\n        \"\U0001F319  Good Night, \")\n & Left(User().FullName, Find(\" \", User().FullName) - 1)\n "
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =500
+            - MainContainer2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - LoaingImage:
+                      Control: Image@2.2.3
+                      Properties:
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(56, 96, 178, 0.1)
+                        Height: =Parent.Height
+                        Image: |
+                          =$"data:image/svg+xml;utf-8, {EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 100 100'>
+
+                          <style>
+                              .loading-text {
+                                  font-family: Arial, sans-serif;
+                                  font-size: 5px;
+                                  font-weight: bold;
+                                  fill: red;
+                                  text-anchor: middle;
+                              }
+                              .spinner {
+                                  animation: rotate 2s linear infinite;
+                                  transform-origin: 50px 50px;
+                              }
+                              @keyframes rotate {
+                                  0% { transform: rotate(0deg); }
+                                  100% { transform: rotate(360deg); }
+                              }
+                              .track {
+                                  fill: none;
+                                  stroke: #ccc;
+                                  stroke-width: 3;
+                              }
+                              .circle {
+                                  fill: none;
+                                  stroke: #010069;
+                                  stroke-width: 3;
+                                  stroke-linecap: round;
+                                  stroke-dasharray: 45, 100;
+                                  stroke-dashoffset: 0;
+                                  animation: dash 1.5s ease-in-out infinite;
+                              }
+                              @keyframes dash {
+                                  0% { stroke-dasharray: 1, 100; stroke-dashoffset: 0; }
+                                  50% { stroke-dasharray: 45, 100; stroke-dashoffset: -25; }
+                                  100% { stroke-dasharray: 45, 100; stroke-dashoffset: -75; }
+                              }
+                          </style>
+
+                          <!-- Bold red loading text ABOVE the circle -->
+                          <text x='50' y='25' class='loading-text'>Loading, please wait</text>
+
+                          <!-- Smaller static circle track -->
+                          <circle class='track' cx='50' cy='50' r='15'></circle>
+
+                          <!-- Smaller spinning progress circle -->
+                          <g class='spinner'>
+                              <circle class='circle' cx='50' cy='50' r='15'></circle>
+                          </g>
+
+                          </svg>")}"
+                        Transparency: =
+                        Width: =Parent.Width
+            - FooterContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - cntCurrentTime:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =97
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =333
+                        X: =363
+                        Y: =318
+                      Children:
+                        - lblCurrentTime:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              Color: =RGBA(9, 33, 98, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =Parent.Height
+                              Size: =19
+                              Text: |
+                                ="Current Time: " & Text(nowTime, "h:mm AM/PM", "en-US")
+                              Width: =Parent.Width
+                        - tmrCurrentTime:
+                            Control: Timer@2.1.0
+                            Properties:
+                              AutoPause: =false
+                              AutoStart: =true
+                              Duration: =1000
+                              OnTimerStart: =Set(nowTime, Now())
+                              Repeat: =true
+                              Visible: =false
+```
+
+- Select any screen to paste the YAML snippet.
+![paste yaml code](assets/pasteCanvasYAML.png)
+
+- Two new screens should be added. scrALM and scrCommunityYAML
+![new screens](assets/YAMLscreenAdded.png)
 
 ### Step 2: Save, publish and commit changes
+
+Now that you've made changes to your canvas app, you'll save those changes locally, publish them to make them live, and then commit them to your Git repository to preserve the changes in source control.
 
 1. **Save the app**
    - Click **Save** in the app designer
@@ -179,24 +388,45 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
 2. **Publish the app**
    - Click **Publish** to make changes available
    - Confirm the publication
+   - **Important:** Only published apps are available to be committed. You must publish before you can commit changes to the repository.
+   ![Publish canvas app](assets/publishCanvasApp.png)
+   - Click Back, to go back to solution explorer
 
 3. **Commit to repository**
    - Go to **Source control** tab in your solution
    - Add commit message: "Updated canvas app with new YAML snippet"
    - Click **Commit**
+   ![commit canvas](assets/commitCanvas.png)
+
+4. **Review the changes in Azure DevOps**
+   - Click in the link in the message "Commit Successful.
+   ![commit message](assets/commitLink.png)
+   - Review the committed files and changes.
+   ![Azure Devops Commit](assets/azdoCanvasYAMLCommit.png)
+
+> **Key takeaway:** You have successfully used the maker portal to commit and update your source code in Azure DevOps. Your changes are now version controlled and available for collaboration.
 
 ### Step 3: Make changes from the repository using vscode.dev
 
+Professional developers often use specialized tools to compare, review, and make changes directly to the repository. In this step, we'll use VS Code (via vscode.dev) to demonstrate how developers can work with the unpacked solution files directly in source control, making targeted changes to YAML files without going through the maker portal.
+
 1. **Open repository in vscode.dev**
-   - Navigate to your GitHub repository
-   - Press `.` (period key) to open vscode.dev
-   - Or change URL from `github.com` to `vscode.dev`
+   - Using your browser, navigate to 'vscode.dev'
+   - Select **Open Remote Repository**
+   - Select **Open Repository from Azure DevOps**
+   ![vscode.dev](assets/vscode.dev.png)
+   - Use **your lab user** to sign in
+   - Chose your organization and your repository
+   ![Choose your organization](assets/chooseOrg.png)
+   - Use explorer to navigate on your repository
 
 2. **Find and edit YAML files**
-   - Navigate to your solution's unpacked files
-   - Find the canvas app `.msapp` folder structure
+   - Navigate PP -> ContosoRealEstate -> Canvasapps -> your app name
+   - locate the Src folder
+   - select the file **scrALM.pa.yaml**
    - Locate a YAML file (e.g., screen configuration)
-   - Make a minor change (update a property value or text)
+   - Make a minor change (update the property **Text** to **"TEXT UPDATED FROM MY REPOSITORY"**)
+   ![update from vsCode](assets/updateFromVSCode.png)
 
 ### Step 4: Commit changes using VS Code
 
@@ -204,6 +434,7 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
    - Use the Source Control panel in vscode.dev
    - Stage your changes
    - Add commit message: "Minor YAML update from repository"
+   ![Commit from vscode](assets/commitFromVsCode.png)
    - Commit and push changes
 
 ### Step 5: Reverse sync - Get changes from repository
@@ -217,25 +448,45 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
 1. **Perform reverse sync in maker portal**
    - Return to your solution in Power Apps maker portal
    - Go to **Source control** tab
-   - Click **Get changes** or **Sync** to pull repository changes
+   - Click **Check for updates** to bring changes in your repository.
+   ![Check for updates](assets/checkUpdates.png)
    - Review the incoming changes
+   - Click Pull to bring the changes
+
+   ![Pull successfully](assets/PullSuccess.png)
 
 2. **Verify changes applied**
    - Open the canvas app to confirm your repository changes are reflected
    - Check that the YAML modifications are visible
+   ![Canvas app updated](assets/CanvasAppUpdatedFromRepo.png)
 
 ### Step 6: Create a conflict scenario
 
 1. **Make simultaneous changes**
-   - **In maker portal**: Edit the same canvas app element you modified in the repo
+   - **In maker portal**: Edit the same canvas app element you modified in the repo. Save and publish the app.
+   ![canvas updated from studio](assets/CanvasUpdatedFromStudio.png)
+   - DON'T COMMIT (we want to keep the repository out of sync)
+
    - **In repository**: Using vscode.dev, make a different change to the same YAML property
-   - Commit both changes
+   - Commit from VSCODE only.
+   ![vscode conflict](assets/vscodeConflict.png)
+
+   Now, go back to maker portal, open your solution and **Check for updates** from your repo.
+
+   ![Conflict](assets/makerPortalConflict.png)
 
 2. **Handle the conflict**
-   - Attempt to sync in the maker portal
-   - **Important**: You'll need to choose your source of truth
-   - **Repository wins**: Accept repository version (recommended for team scenarios)
-   - **Maker portal wins**: Keep maker portal version and commit over repository
+
+**Scenario:** You've now simulated a real-world development situation where two developers are working on the same solution simultaneously:
+
+- A **maker** used the Power Apps portal to modify the canvas app
+- A **pro developer** used VS Code to make changes directly to the repository
+
+This demonstrates why maintaining a **1:1 relationship between environment and branch** is critical - two developers should not work on the same branch, as changes made in parallel can conflict. Now we'll see how to bring the developer's changes back into the maker portal.
+
+- **Important**: You'll need to choose your source of truth
+- **Repository wins**: Accept repository version (recommended for team scenarios)
+- **Maker portal wins**: Keep maker portal version and commit over repository
 
 3. **Resolution strategy**
    - Decide on your source of truth based on context
