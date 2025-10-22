@@ -1,6 +1,12 @@
 # 🧪 Lab 4: Lifecycle Mastery in Power Pages
 
-In this lab, you'll get hands-on experience with managing the lifecycle of Power Pages within Managed Environments. You'll learn how to leverage source code management, environment routing, and deployment pipelines to ensure your Power Pages applications are secure, compliant, and efficiently managed throughout their lifecycle.
+In this lab, you'll:
+
+- Explore how Managed Environments enhance ALM with policy-driven controls and telemetry
+- Set up and use **Power Platform Pipelines** for secure, automated deployments
+- Apply environment routing to guide apps and agents to the right zones
+- Learn how ALM patterns extend to Copilot Studio agents and future AI workloads
+- Get hands-on with solution packaging, approvals, and rollback strategies
 
 ## Agenda
 
