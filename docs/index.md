@@ -18,16 +18,15 @@ Whether you're a Center of Excellence leader, IT admin, or solution architect, y
 
 | Lab | Time | Presenter(s) | Topic |
 | --- | --- | --- | --- |
-| [Lab 1](docs/labs/lab1/Readme.md) | 9:00 AM | Casey, Prabhat | Solution and DevOps 101 |
-| [Lab 2](docs/labs/lab2/Readme.md) | 10:30 AM | Marcel | Building Power Platform Solutions |
-| [Lab 3](docs/labs/lab3/Readme.md) | 1:00 PM | Yash | Deploy From Source Control |
-| [Lab 4](docs/labs/lab4/Readme.md) | 2:00 PM | Ashish Neeraj | Lifecycle Mastery in Power Pages |
-| [Lab 5](docs/labs/lab5/Readme.md) | TBD | Casey, Prabhat, Marcel | Automated Test |
+| [Lab 1](labs/lab1/lab1.md) | 9:00 AM | Casey, Prabhat | Solution and DevOps 101 |
+| [Lab 2](labs/lab2/lab2.md) | 10:30 AM | Marcel | Building Power Platform Solutions |
+| [Lab 3](labs/lab3/lab3.md) | 1:00 PM | Yash | Deploy From Source Control |
+| [Lab 4](labs/lab4/lab4.md) | 2:00 PM | Ashish, Priyanshu | Lifecycle Mastery in Power Pages |
 | - | 3:30 PM | All | AMA |
 
 ## 🚀 Getting Started
 
-1. Start with [Lab 1: Setup](labs/lab1/Readme.md)
+1. Start with [Lab 1: Setup](labs/lab1/lab1.md)
 1. Follow the labs in sequence
 
 ---
