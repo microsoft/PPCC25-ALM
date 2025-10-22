@@ -106,8 +106,6 @@ In this task, we will work with the **Solution binary package** (.zip format) as
 
    ![Imported successfully](assets/ImportedSuccessfully.png)
 
-Now repeat the steps above to import the solution in your environment "Hotfix".
-
 ### Step 2: Commit the solution using Power Platform Git integration
 
 1. **Enable Git integration** (if not already configured)
@@ -166,7 +164,7 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
    ![Solution Explorer](assets/solutionExplorer.png)
    - You are now in Power Apps Studio
 
-2. **Import YAML code snippet**
+1. **Import YAML code snippet**
 
 - Copy the YAML code bellow
 
@@ -385,20 +383,20 @@ Now that you've made changes to your canvas app, you'll save those changes local
    - Click **Save** in the app designer
    - Add a meaningful save comment
 
-2. **Publish the app**
+1. **Publish the app**
    - Click **Publish** to make changes available
    - Confirm the publication
    - **Important:** Only published apps are available to be committed. You must publish before you can commit changes to the repository.
    ![Publish canvas app](assets/publishCanvasApp.png)
    - Click Back, to go back to solution explorer
 
-3. **Commit to repository**
+1. **Commit to repository**
    - Go to **Source control** tab in your solution
    - Add commit message: "Updated canvas app with new YAML snippet"
    - Click **Commit**
    ![commit canvas](assets/commitCanvas.png)
 
-4. **Review the changes in Azure DevOps**
+1. **Review the changes in Azure DevOps**
    - Click in the link in the message "Commit Successful.
    ![commit message](assets/commitLink.png)
    - Review the committed files and changes.
@@ -420,7 +418,7 @@ Professional developers often use specialized tools to compare, review, and make
    ![Choose your organization](assets/chooseOrg.png)
    - Use explorer to navigate on your repository
 
-2. **Find and edit YAML files**
+1. **Find and edit YAML files**
    - Navigate PP -> ContosoRealEstate -> Canvasapps -> your app name
    - locate the Src folder
    - select the file **scrALM.pa.yaml**
@@ -455,7 +453,7 @@ Professional developers often use specialized tools to compare, review, and make
 
    ![Pull successfully](assets/PullSuccess.png)
 
-2. **Verify changes applied**
+1. **Verify changes applied**
    - Open the canvas app to confirm your repository changes are reflected
    - Check that the YAML modifications are visible
    ![Canvas app updated](assets/CanvasAppUpdatedFromRepo.png)
@@ -475,7 +473,7 @@ Professional developers often use specialized tools to compare, review, and make
 
    ![Conflict](assets/makerPortalConflict.png)
 
-2. **Handle the conflict**
+1. **Handle the conflict**
 
 **Scenario:** You've now simulated a real-world development situation where two developers are working on the same solution simultaneously:
 
@@ -488,7 +486,7 @@ This demonstrates why maintaining a **1:1 relationship between environment and b
 - **Repository wins**: Accept repository version (recommended for team scenarios)
 - **Maker portal wins**: Keep maker portal version and commit over repository
 
-3. **Resolution strategy**
+1. **Resolution strategy**
    - Decide on your source of truth based on context
    - Communicate with team about the chosen resolution
    - Document the decision for future reference
@@ -502,114 +500,94 @@ This demonstrates why maintaining a **1:1 relationship between environment and b
 
 In this task, we will simulate team development using multiple Power Platform environments. This demonstrates how different developers can work on the same solution using separate development environments while maintaining code synchronization through Git.
 
-**Prerequisites:** You'll need access to a second development environment for this exercise.
+**Prerequisites:** You'll need access to a second development environment for this exercise. We will call this environment **Hotfix**
 
-### Step 1: Export solution from your current environment
+### Step 1: Set up the Hotfix environment
 
-1. **Navigate to your current development environment**
-   - Go to [make.powerapps.com](https://make.powerapps.com)
-   - Ensure you're in the environment where you completed Tasks 1 and 2
-
-2. **Export the solution**
-   - Go to **Solutions**
-   - Select your working solution
-   - Click **Export**
-   - Choose **Managed** or **Unmanaged** (typically choose **Unmanaged** for development)
-   - Click **Next** and then **Export**
-   - Download the solution .zip file
-
-### Step 2: Set up the second development environment
-
-1. **Switch to your second development environment**
+1. **Switch to your Hotfix environment**
    - In the Power Apps maker portal, use the environment selector
-   - Choose your second development environment
+   - Choose your Hotfix environment
    - If you don't have one, create a new developer environment
 
-2. **Import the solution**
+1. **Import the solution**
    - Click **Solutions** > **Import solution**
-   - Upload the .zip file you exported in Step 1
-   - Configure import settings (keep defaults)
+   - Upload the same solution we started this lab. [Contoso Real Estate](assets/ContosoRealEstate_1_0_0_2.zip)   
    - Click **Import** and wait for completion
+   > **Note:** The solution you're importing in the HotFix environment is the base solution file and does not yet have the updates from your development branch. You will update it later when you connect the HotFix environment to a different branch and sync changes from your repository.
 
-### Step 3: Connect to Git repository with a new branch
+### Step 2: Connect Hotfix Environment to Git repository with a new branch
 
-1. **Create a new branch for the second environment**
-   - The new branch will represent the second developer's workspace
-   - Branch name suggestion: `dev-environment-2` or `developer-2-workspace`
+Now we'll create a new Git branch from the main branch to work in an isolated environment. This simulates a hotfix scenario where you need to make urgent production fixes without impacting ongoing development work.
 
-2. **Configure Git integration**
-   - In your imported solution, go to **Settings** > **Git integration**
-   - Connect to the same repository you used in previous tasks
-   - **Important:** Create and select a new branch (not the main branch)
-   - Complete the Git integration setup
-
-3. **Verify branch connection**
-   - Confirm you're connected to your new branch
-   - Check that the solution can commit to this separate branch
-   - This simulates a second developer working independently
+1. **In your hotfix environment**
+   - Open the Solution **Contoso Real Estate**
+   - Select **Source control**
+   - Click connect
+   ![Hotfix environment](assets/HotfixEnvironment.png)
+   - select the options bellow:
+   ![Hotfix Connect To Repo](assets/hotfixConnectGit.png)
+   - In the next screen, select **Create new branch**
+   ![create hotfix branch](assets/CreateHotfixBranch.png)
+   - Click connect to complete
+   - Select Check for updates, to update your environment with changes from your repo.
+   - Select all conflicts, and click **Accept Incoming Changes**
+   ![Hotfix Conflicts](assets/HotfixConflicts.png)
+   - Confirm you want to accept the changes from your repository.
+   ![Confirm](assets/hotfixConfirmAcceptChanges.png)
+   - Click pull to get the changes.
 
 **Important concept:** In Power Platform, we recommend maintaining a **1:1 relationship between environment and branch**. Each development environment should be connected to its own dedicated Git branch for clean separation of work.
 
-### Step 4: Make changes in Development Environment 1
+### Step 4: Make changes in Hotfix Environment
 
-1. **Switch back to your first development environment**
-   - Return to the environment used in Tasks 1 and 2
-   - Open your solution and navigate to the Canvas app
+In this step, you'll simulate a hotfix scenario by making a critical update to the canvas app in your HotFix environment. Since the HotFix branch is isolated from your main development branch, you can work independently and commit changes without affecting ongoing development work.
 
-2. **Modify a control label**
+1. **Open the solution in the HotFix environment**
+   - In the HotFix environment, navigate to your imported solution
+   - Find and open the Canvas app component
+   - This is the base version without your previous development changes
+
+1. **Make a hotfix change to the canvas app**
    - Open the Canvas app in edit mode
-   - Select any control with a label (button, text label, etc.)
-   - Change the text property to something new (e.g., "Updated in Dev 1")
-   - Save and publish the app
+   - Make a targeted change that simulates a production hotfix (e.g., fix a button label, update a formula, or correct text)
+   - Keep the change focused and minimal, as hotfixes typically target specific issues
+   ![canvas changes](assets/CanvasHotfixChanges.png)
 
-3. **Commit the changes**
-   - Go to **Source control** tab
-   - Add commit message: "Updated control label in dev environment 1"
-   - Click **Commit** to save to your first branch
+1. **Save the app**
+   - Click **Save** in the app designer
+   - Add a meaningful save comment that describes the hotfix (e.g., "Hotfix: Corrected button text")
 
-### Step 5: Make changes in Development Environment 2
+1. **Publish the app**
+   - Click **Publish** to make the changes available
+   - Confirm the publication
+   - **Important:** Only published apps are available to be committed. You must publish before you can commit changes to the repository.
 
-1. **Switch to your second development environment**
-   - Navigate to your second development environment
-   - Open the same solution and Canvas app
+1. **Commit the hotfix to your HotFix branch**
+   - Go to **Source control** tab in your solution
+   - Add a commit message: "Hotfix: [description of the fix]"
+   - Click **Commit** to save the changes to your HotFix branch in the repository
+   ![Hotfix commit](assets/hotfixcommit.png)
 
-2. **Add a new screen**
-   - In the Canvas app designer, click **New screen**
-   - Choose a screen template or create a blank screen
-   - Add some basic controls to the new screen (optional)
-   - Save and publish the app
+1. **Verify the hotfix commit in Azure DevOps**
+   - Navigate to your Azure DevOps repository
+   ![Navigate to your repository](assets/NavigateToADO.png)
+   - You should be in the **Hotfix** branch. Select **Create pull request** to send changes to main
+   ![Create PR](assets/createPR.png)
+   - Add title and description, and click create.
+   ![Create PR details](assets/CreatePRDetails.png)
+   - You should have no merge conflicts. Complete the PR.
+   ![Complete pull request](assets/completePR.png)
 
-3. **Commit the changes**
-   - Go to **Source control** tab
-   - Add commit message: "Added new screen in dev environment 2"
-   - Click **Commit** to save to your second branch
+1. **Update your dev environment with hotfix from repository**
+   - In the Dev environment, navigate to the Contoso Real Estate solution.
+   - Navigate to Source Control.
+   - Click **Check for updates**
+   - Pull the changes
+   ![Pull complete](assets/hotfixPull.png)
+   - You should have the hotfix now. Open your canvas app to confirm
+   ![Hotfix in Dev](assets/hotfixInDev.png)
 
-### Step 6: Merge branches using VS Code
-
-1. **Open repository in VS Code**
-   - Navigate to your GitHub repository
-   - Press `.` to open vscode.dev (or use GitHub Codespaces)
-   - Or clone locally and use desktop VS Code
-
-2. **Create Pull Request or merge directly**
-   - **Option A: Pull Request (Recommended)**
-     - Create a Pull Request from `dev-environment-2` to `dev-environment-1`
-     - Review the changes in both branches
-     - Merge the PR after review
-
-   - **Option B: Direct merge using Git commands**
-     - Switch to your first branch: `git checkout dev-environment-1`
-     - Merge the second branch: `git merge dev-environment-2`
-     - Resolve any conflicts if they arise
-     - Push the merged changes: `git push origin dev-environment-1`
-
-3. **Handle any merge conflicts**
-   - If conflicts occur in Canvas app files, review carefully
-   - Choose the appropriate resolution strategy
-   - Remember: Power Platform files can be complex to merge
-
-> **Expected outcome:** You've successfully demonstrated team development with separate environments and branches, then merged changes using standard Git workflows.
-
+> **Expected outcome:** You've successfully created an isolated hotfix in a separate branch, demonstrating how to handle urgent production fixes without impacting ongoing development work.
 > **Key learning:** The 1:1 environment-to-branch relationship keeps development organized and makes it easier to track which changes come from which developer or environment.
 
 ---
@@ -625,13 +603,13 @@ In this final task, we will create a Microsoft Copilot Studio (MCS) agent and co
    - Ensure you're in the same environment as your solution
    - Click **Create** > **New agent**
 
-2. **Configure the agent**
+1. **Configure the agent**
    - **Name**: Give your agent a descriptive name (e.g., "Lab Solution Assistant")
    - **Description**: Add a brief description of the agent's purpose
    - **Language**: Select your preferred language
    - Click **Create** to initialize the agent
 
-3. **Basic agent setup**
+1. **Basic agent setup**
    - Review the default greeting and system message
    - Customize the agent's personality and tone if desired
    - Test the basic conversation flow
@@ -642,13 +620,13 @@ In this final task, we will create a Microsoft Copilot Studio (MCS) agent and co
    - In your agent, navigate to **Knowledge** section
    - Click **Add knowledge** or **+ Add source**
 
-2. **Connect to Dataverse**
+1. **Connect to Dataverse**
    - Select **Dataverse** as the knowledge source type
    - Choose **Tables** from your current environment
    - Select the tables that were imported with your solution
    - Configure access permissions as needed
 
-3. **Configure knowledge source settings**
+1. **Configure knowledge source settings**
    - Set up how the agent should use the table data
    - Configure any filters or specific columns to include/exclude
    - Test the knowledge source connection
@@ -660,7 +638,7 @@ In this final task, we will create a Microsoft Copilot Studio (MCS) agent and co
    - Ask questions that should trigger responses from your Dataverse tables
    - Verify the agent can access and use the table data appropriately
 
-2. **Refine the agent behavior**
+1. **Refine the agent behavior**
    - Adjust the agent's instructions based on test results
    - Fine-tune how it presents information from Dataverse
    - Test edge cases and error scenarios
@@ -674,13 +652,13 @@ In this final task, we will create a Microsoft Copilot Studio (MCS) agent and co
    - Select your newly created agent
    - Add it to the solution
 
-2. **Commit the agent to source control**
+1. **Commit the agent to source control**
    - Go to **Source control** tab in your solution
    - You should see the agent files in the pending changes
    - Add commit message: "Added Copilot Studio agent with Dataverse knowledge source"
    - Click **Commit**
 
-3. **Verify agent in repository**
+1. **Verify agent in repository**
    - Check your Git repository to see the agent files
    - Review the agent's metadata and configuration files
    - Note how the agent integrates with your overall solution structure
