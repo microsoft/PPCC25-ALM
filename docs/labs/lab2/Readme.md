@@ -4,7 +4,7 @@ layout: lab
 
 # 🧪 Lab 2: Building Power Platform Solutions
 
-Replace this paragraph with a short description of the lab: goals, expected outcomes, and any high-level notes.
+The inner loop is where developers spend most of their time - writing code, testing changes, and iterating quickly. In Power Platform, your **solution is your source code**. This lab focuses on working in the inner loop with your Power Platform solution, exploring how solutions exist at different levels of abstraction (binary packages, unpacked metadata files, and traditional source code projects), and how Power Platform Git Integration enables version control collaboration. You'll learn how to handle conflicts when changes occur in multiple places, work across development environments, and integrate AI agents into your ALM workflow. This hands-on lab demonstrates the complete inner-loop lifecycle of managing Power Platform solutions.
 
 ✅ Lab tasks
 
@@ -48,6 +48,23 @@ The term "solution" can be confusing because it represents different levels of a
 
 ---
 
+## 📋 Prerequisites
+
+To complete this lab, you need to have the following environments and resources configured:
+
+### Environments
+
+| Environment Name | Environment Type | Purpose |
+|---|---|---|
+| Dev | Development | Primary development environment for creating and testing solutions |
+| HotFix | Development | Secondary environment for hotfix development and multi-environment testing |
+
+### Repository
+
+- **Azure DevOps Repository**: You need an Azure DevOps repository configured with Git integration enabled. This repository will store your solution's unpacked metadata files and enable version control collaboration.
+
+---
+
 ## 📥 Task 1: Import and commit a solution in your dev environment
 
 In this task, we will work with the **Solution binary package** (.zip format) as defined earlier in our abstractions. This is the packaged format used for importing and exporting solutions between Power Platform environments.
@@ -56,44 +73,83 @@ In this task, we will work with the **Solution binary package** (.zip format) as
 
 1. **Navigate to the Power Apps maker portal**
    - Go to [make.powerapps.com](https://make.powerapps.com)
-   - Select your development environment
+   - Select the environment "Dev"
 
-2. **Access the solution import feature**
+![Select the environment Dev](assets/EnvironmentList.png)
+
+1. **Access the solution import feature**
    - In the left navigation, click on **Solutions**
+
+   ![Solution menu](assets/SolutionLeftMenu.png)
+
    - Click **Import solution** at the top of the page
 
-3. **Upload the solution file**
+1. **Upload the solution file**
+   - Download the solution [ContosoRealEstate](assets/ContosoRealEstate_1_0_0_2.zip) available in the assets folder of this repo.
    - Click **Choose File** or **Browse**
    - Navigate to the `assets` folder in this repository
    - Select the solution `.zip` file provided for this lab
    - Click **Next**
 
-4. **Configure import settings**
+1. **Configure import settings**
    - Review the solution information
-   - Choose import options as needed (typically keep defaults)
    - Click **Import**
 
-5. **Wait for import completion**
+![Import solution dialog](assets/IimportSolutionDialog.png)
+
+1. **Wait for import completion**
    - Monitor the import progress
+
+   ![Importing Solution](assets/ImportingSolution.png)
+
    - Verify the solution appears in your Solutions list
+
+   ![Imported successfully](assets/ImportedSuccessfully.png)
+
+Now repeat the steps above to import the solution in your environment "Hotfix".
 
 ### Step 2: Commit the solution using Power Platform Git integration
 
 1. **Enable Git integration** (if not already configured)
-   - In the Solutions area, select your imported solution
-   - Click **Settings** > **Git integration**
-   - Connect to your repository and branch
+   - In the Solutions area, click Connect to Git
 
-2. **Commit the solution to source control**
+   ![Connect to GIT](assets/ConnectToGit.png)
+
+   - Connect to your Azure DevOps Organization. In the dialog, select:
+     - Connection type: *Solution*
+     - Organization: Select the available
+     - Project: Select an available project
+     - Repository: select an available Repository
+     - Root Git folder: PP
+
+     ![Connect to GIT dialog](assets/ConnectToGitDialog.png)
+
+     Note: if you don't have an organization to select you must create an Azure DevOps Organization.
+
+   - Connect to your repository and branch. In the dialog, select:
+     - Solution: ContosoRealEstate
+     - Branch: Main
+     - Git folder: PP/ContosoRealEstate
+     ![Connect to repo dialog](assets/ConnectToGitRepoDialog.png)
+   - Click Connect
+
+You are now connect to your GIT repository!
+
+![Connected to GIT](assets/ConnectedToGit.png)
+
+1. **Commit the solution to source control**
+   - In **Solution explorer**, open the solution **Contoso Real Estate**
    - Go to **Source control** tab in your solution
+   ![Source Control](assets/SourceControl.png)
    - Add a commit message: "Initial import of [solution name]"
    - Click **Commit** to save the solution to your Git repository
+   ![Commit Success](assets/CommitSuccessful.png)
 
-3. **Verify the commit**
+1. **Verify the commit**
    - Check your Git repository to confirm the solution files were committed
    - Review the folder structure created by the Power Platform Git integration
 
-> **Expected outcome:** Your solution is now imported into your development environment and committed to source control as an unpacked solution format.
+> **Expected outcome:** Your solution is now imported into your development environment and committed to source control as an unpacked solution format. You also have imported the solution in a Hotfix environment, not yet connected to your repository.
 
 ---
 
@@ -153,6 +209,7 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
 ### Step 5: Reverse sync - Get changes from repository
 
 **Important concepts:**
+
 - **Reverse Sync**: Getting code changes from the repository back into your maker portal environment
 - **Source of Truth**: In conflict situations, you must decide whether the repository or maker portal version is correct
 - **No merging**: Unlike traditional code, you don't merge Power Platform conflicts - you choose one source as authoritative
@@ -186,7 +243,6 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
    - Document the decision for future reference
 
 > **Expected outcome:** You understand how to work with both maker portal and repository, handle reverse sync, and resolve conflicts by choosing a source of truth.
-
 > **Key learning**: More complex merge scenarios and team collaboration patterns will be covered in the next lab.
 
 ---
@@ -289,7 +345,7 @@ In this task, we will simulate team development using multiple Power Platform en
      - Create a Pull Request from `dev-environment-2` to `dev-environment-1`
      - Review the changes in both branches
      - Merge the PR after review
-   
+
    - **Option B: Direct merge using Git commands**
      - Switch to your first branch: `git checkout dev-environment-1`
      - Merge the second branch: `git merge dev-environment-2`
@@ -379,7 +435,4 @@ In this final task, we will create a Microsoft Copilot Studio (MCS) agent and co
    - Note how the agent integrates with your overall solution structure
 
 > **Expected outcome:** You have successfully created a Copilot Studio agent that uses Dataverse tables as a knowledge source, integrated it into your Power Platform solution, and committed it to source control as part of your ALM workflow.
-
-> **Key insight:** AI agents are now first-class citizens in Power Platform ALM, following the same source control patterns as apps, flows, and other solution components. 
-
-
+> **Key insight:** AI agents are now first-class citizens in Power Platform ALM, following the same source control patterns as apps, flows, and other solution components.
