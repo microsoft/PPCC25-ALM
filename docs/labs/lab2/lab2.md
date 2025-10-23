@@ -144,7 +144,7 @@ You are now connect to your GIT repository!
    - Check your Git repository to confirm the solution files were committed
    - Review the folder structure created by the Power Platform Git integration
 
-> **Expected outcome:** Your solution is now imported into your development environment and committed to source control as an unpacked solution format. You also have imported the solution in a Hotfix environment, not yet connected to your repository.
+> **Expected outcome:** Your solution is now imported into your development environment and committed to source control as an unpacked solution format.
 
 ---
 
