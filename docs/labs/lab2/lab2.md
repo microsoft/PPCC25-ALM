@@ -162,7 +162,7 @@ In this task, we will work with the **Solution Explorer** in the Power Apps make
 
 1. **Import YAML code snippet**
 
-- Copy the YAML code bellow
+- Copy the YAML code bellow (or [copy YAML file from GitHub](https://github.com/microsoft/PPCC25-ALM/blob/main/docs/labs/lab2/assets/screens.pa.yaml))
 
 ```yaml
 Screens:
@@ -507,7 +507,7 @@ In this task, we will simulate team development using multiple Power Platform en
 
 1. **Import the solution**
    - Click **Solutions** > **Import solution**
-   - Upload the same solution we started this lab. [Contoso Real Estate](assets/ContosoRealEstate_1_0_0_2.zip)   
+   - Upload the same solution we started this lab. [Contoso Real Estate](assets/ContosoRealEstate_1_0_0_2.zip)
    - Click **Import** and wait for completion
    > **Note:** The solution you're importing in the HotFix environment is the base solution file and does not yet have the updates from your development branch. You will update it later when you connect the HotFix environment to a different branch and sync changes from your repository.
 
@@ -660,4 +660,4 @@ In this final task, we will create a Microsoft Copilot Studio (MCS) agent and co
    - Note how the agent integrates with your overall solution structure
 
 > **Expected outcome:** You have successfully created a Copilot Studio agent that uses Dataverse tables as a knowledge source, integrated it into your Power Platform solution, and committed it to source control as part of your ALM workflow.
-> **Key insight:** AI agents are now first-class citizens in Power Platform ALM, following the same source control patterns as apps, flows, and other solution components.
+> **Key insight:** AI agents are now first-class citizens in Power Platform ALM, following the same source control patterns as apps, flows, and other solution components

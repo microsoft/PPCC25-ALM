@@ -29,6 +29,8 @@ Whether you're a Center of Excellence leader, IT admin, or solution architect, y
 1. Start with [Lab 1: Setup](labs/lab1/lab1.md)
 1. Follow the labs in sequence
 
+> **💡 Tip:** For a browser-friendly visualization, visit <https://microsoft.github.io/PPCC25-ALM>
+
 ---
 
 *Workshop materials for PPCC25 - Power Platform Community Conference 2025*
