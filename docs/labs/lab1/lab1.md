@@ -59,7 +59,7 @@ In the real world, you might allow a smaller group of individuals to create agen
 5.	On the next screen, select **Canada**, solve the puzzle, and **Continue**
 6.	You will be redirected to your Azure DevOps organization in a moment.
 ![ADO Almost done](assets/ADOalmostDone.png)
-7.	Enter **Power Platform** for the **Project name** of your choice. For example, PPCC25DevOps
+7.	Enter **Power Platform** for the **Project name**
 ![ADO Create project](assets/ADOcreateProject.png)
 8.	Select **Repos** in the left menu, then **Initialize**
 ![ADO Initialize Repository](assets/ADOinitializeRepo.png)
