@@ -538,12 +538,13 @@ Now we'll create a new Git branch from the main branch to work in an isolated en
    - In the next screen, select **Create new branch**
    ![create hotfix branch](assets/CreateHotfixBranch.png)
    - Click connect to complete
-   - Select Check for updates, to update your environment with changes from your repo.
+   - Wait until all the changes in the environment are processed.
+   - Select **Check for updates**, to compare your environment with the content from your repo.
    - If you have conflicts, select all conflicts, and click **Accept Incoming Changes**
    ![Hotfix Conflicts](assets/HotfixConflicts.png)
    - Confirm you want to accept the changes from your repository.
    ![Confirm](assets/hotfixConfirmAcceptChanges.png)
-   - Click pull to get the changes.
+   - Click **Pull** to apply the changes from your repository to your environment.
 
 **Important concept:** In Power Platform, we recommend maintaining a **1:1 relationship between environment and branch**. Each development environment should be connected to its own dedicated Git branch for clean separation of work.
 
