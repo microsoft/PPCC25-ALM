@@ -500,16 +500,29 @@ In this task, we will simulate team development using multiple Power Platform en
 
 ### Step 1: Set up the Hotfix environment
 
+1. **Export your Contoso Real Estate solution from Dev environment**
+   - In the Power Apps maker portal, make sure you're in your **Dev** environment
+   - Click **Solutions** in the left navigation
+   - Select the **Contoso Real Estate** solution
+   - Click **Export** in the top menu
+   - In the export dialog, select **Unmanaged** solution type
+   - Click **Export**
+   - Wait for the solution to be prepared (this may take a few moments)
+   - The solution will download as a `.zip` file to your computer
+   - Save this file in an easily accessible location
+
 1. **Switch to your Hotfix environment**
    - In the Power Apps maker portal, use the environment selector
    - Choose your Hotfix environment
    - If you don't have one, create a new developer environment
 
-1. **Import the solution**
+1. **Import the solution into Hotfix environment**
    - Click **Solutions** > **Import solution**
-   - Upload the same solution we started this lab. [Contoso Real Estate](assets/ContosoRealEstate_1_0_0_2.zip)
+   - Click **Browse** and select the solution `.zip` file you just exported from your Dev environment
+   - Click **Next**
+   - Review the solution information
    - Click **Import** and wait for completion
-   > **Note:** The solution you're importing in the HotFix environment is the base solution file and does not yet have the updates from your development branch. You will update it later when you connect the HotFix environment to a different branch and sync changes from your repository.
+   > **Note:** You're importing the exported solution from your Dev environment which includes all your recent changes. This allows you to have a consistent starting point in the HotFix environment for testing multi-environment workflows.
 
 ### Step 2: Connect Hotfix Environment to Git repository with a new branch
 
@@ -526,7 +539,7 @@ Now we'll create a new Git branch from the main branch to work in an isolated en
    ![create hotfix branch](assets/CreateHotfixBranch.png)
    - Click connect to complete
    - Select Check for updates, to update your environment with changes from your repo.
-   - Select all conflicts, and click **Accept Incoming Changes**
+   - If you have conflicts, select all conflicts, and click **Accept Incoming Changes**
    ![Hotfix Conflicts](assets/HotfixConflicts.png)
    - Confirm you want to accept the changes from your repository.
    ![Confirm](assets/hotfixConfirmAcceptChanges.png)
