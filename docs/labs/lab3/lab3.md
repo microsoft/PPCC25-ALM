@@ -665,36 +665,22 @@ Finally, let's test the new approvals and SPN delegation steps we just added. Go
 
 1. **Review and deploy**
    - On the summary tab, take a close look at the AI-generated Deployment Notes section. This will be provided for all approvers to review as a part of the approval request
-   - Click **Deploy** on the next page. The Deployment stage will look like this as the pipeline waits for the approval process to complete:
-
-![Waiting for Approval](assets/image62.png)
+   - Click **Deploy** on the next page. The Deployment stage will update as it waits for the approval process to complete
 
 1. **Approve deployment**
    - Now, let's approve our deployment. While there are many ways to action on an Approval request in Power Platform, such as Approvals tab on Power Automate Maker portal, Approvals in Teams, or Approval email in Outlook, we will leverage new Advanced Approvals functionality in Deployments to approve the request. This is a great one-stop-shop like experience for Admins who are responsible for reviewing approvals across multiple pipelines under the same Host or across multiple Hosts
    - Navigate to the PPAC at https://admin.preview.powerplatform.microsoft.com/deployment/overview
    - On the **Overview** tab, you will see the **Pipelines activity** section
-
-![Pipelines Activity](assets/image63.png)
-
-1. **Review and approve**
-   - Here, you should find the approval you just initiated through your deployment pipeline. Click on it to see the deployment details of the Approval request:
+   - Here, you should find the approval you just initiated through your deployment pipeline. Click on it to see the deployment details of the Approval request
    - Provide comments for your request, and click **Approve**
-
-![Approve Request](assets/image64.png)
 
 1. **Monitor deployment**
    - Check back on your pipeline after receiving the approval. Your deployment stage will update with "Currently deploying version #.#.#.#"
-
-![Deploying](assets/image65.png)
-
-1. **Verify sharing**
    - Once complete, click on the **Go to this environment** hyperlink on the deployment stage
    - Click on the **Solutions** blade on the left-hand navigation
    - Click **Managed** tab
    - Open the **Contoso Real Estate** solution > On the Model Driven App, select **3 dots** > click **Share**
    - On the Share Pane, scroll down and verify that the **Production App Access Group** is listed
-
-![Verify Sharing](assets/image66.png)
 
 ---
 
@@ -713,25 +699,11 @@ Let's pretend the last deployment contained a critical breaking change and it ne
 
 1. **Access Run History**
    - Select **Pipelines** > click on the **Run History** tab
-
-![Run History](assets/image67.png)
-
-1. **Redeploy previous version**
    - Select the lower version, then **Re-deploy** from the menu
    - Select **Redeploy** in the confirmation popup
-
-![Redeploy](assets/image68.png)
-
-1. **Complete redeployment**
    - When the deployment panel opens, click **Next** until you get to the last screen, then **Deploy**. See prior Task for detailed steps if needed
    - In a new tab, open Power Automate portal again and **Approve** the deployment request
-
-![Approve Redeploy](assets/image69.png)
-
-1. **Monitor redeployment**
    - Deployment is now in-progress. Wait until it finishes. You may need to refresh the pipelines page
-
-![Redeployment Progress](assets/image70.png)
 
 Disaster averted! Now the prior version is deployed to production and you have time to fix the (hypothetical) issue and deploy an updated version when ready.
 
@@ -751,8 +723,4 @@ Disaster averted! Now the prior version is deployed to production and you have t
 1. **Enable Managed Environments**
    - In the ribbon, click **Enable Managed Environments**
    - Click **Enable** in the fly out wizard
-
-![Enable ME](assets/image71.png)
-
-1. **Repeat for other environments**
    - Repeat steps 3-5 for any other environments where you need to enable Managed Environments
