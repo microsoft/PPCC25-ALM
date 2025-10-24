@@ -638,74 +638,145 @@ In this step, you'll simulate a hotfix scenario by making a critical update to t
 
 ## 🤖 Task 4: Create a new agent
 
-In this final task, we will create a Microsoft Copilot Studio (MCS) agent and configure it to use Dataverse tables as a knowledge source. This demonstrates how AI agents integrate into the Power Platform ALM lifecycle alongside apps and flows.
+In this final task, we will create a Microsoft Copilot Studio (MCS) agent and configure it to use Dataverse tables as a knowledge source. This demonstrates how AI agents integrate into the Power Platform ALM lifecycle alongside apps and flows. To make the agent ALM-ready, we'll create it within a solution from the start.
 
-### Step 1: Create a new Copilot Studio agent
+### Step 1: Navigate to Copilot Studio in the correct environment
 
-1. **Navigate to Copilot Studio**
-   - Go to [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com)
-   - Ensure you're in the same environment as your solution
-   - Click **Create** > **New agent**
+1. **Verify your Power Apps environment ID**
+   - Navigate to [make.powerapps.com](https://make.powerapps.com)
+   - Switch to your **Hotfix** environment
+   - Look at your browser's URL - it should look like:
+
+     ```text
+     https://make.powerapps.com/environments/12345678-1234-1234-1234-123456789abc/apps
+     ```
+
+   - Copy the environment ID from the URL (the GUID between `/environments/` and `/apps`)
+   - **Example**: If your URL is `https://make.powerapps.com/environments/12345678-1234-1234-1234-123456789abc/apps`, your environment ID is `12345678-1234-1234-1234-123456789abc`
+
+1. **Navigate to Copilot Studio with the correct environment**
+   - Open a new browser tab
+   - Navigate to Copilot Studio using your environment ID:
+
+     ```text
+     https://copilotstudio.microsoft.com/environments/YOUR-ENVIRONMENT-ID-HERE
+     ```
+
+   - Replace `YOUR-ENVIRONMENT-ID-HERE` with the environment ID you copied from Power Apps
+   - **Example**: `https://copilotstudio.microsoft.com/environments/12345678-1234-1234-1234-123456789abc`
+   - Verify you're in the correct environment by checking the environment name displayed in Copilot Studio
+
+   > **Note**: If you don't see the environment ID in the Copilot Studio URL, you may not be in the correct environment. Go back to Power Apps, copy the environment ID again, and update the Copilot Studio URL accordingly.
+
+![MCS in the hotfix environment](assets/mcsEnvironment.png)
+
+### Step 2: Set up the solution for ALM
+
+To make your agent ALM-ready, it must be created within a solution. This enables version control, deployment across environments, and integration with Git.
+
+1. **Navigate to the Solutions area**
+   - In Copilot Studio, click on **Solutions** in the left navigation
+   ![solution](assets/mcsSolutionMenu.png)
+   - You should see the **Contoso Real Estate** solution that you've been working with in previous tasks
+
+1. **Set the Contoso Real Estate solution as the preferred solution**
+   - In the ribbon, select **Set preferred solution**
+   - Select the Contoso **Real Estate Solution**
+   - Apply
+   - This ensures that any new components you create will automatically be added to this solution
+   ![Preferred Solution](assets/mcsPrefferedSolution.png)
+
+1. **Verify Git integration is connected**
+   - Click on the **Contoso Real Estate** solution to open it
+   - Check that the solution shows it's connected to Git (you should see a Git status indicator or source control option)
+
+   > **Important**: The solution must be connected to Git integration to enable source control for your agent. This allows you to commit agent changes alongside other solution components.
+
+1. **Navigate back to the Copilot Studio home page**
+   - Click the **Copilot Studio icon** in the top left corner of the screen to return to the home page
+   - This will take you back to the main Copilot Studio interface where you can create new agents
+
+![back to main screen](assets/mcsGoToMainScreen.png)
+
+### Step 3: Create a new Copilot Studio agent
+
+1. **Use the chat to create your agent**
+   - From the Copilot Studio home page, describe the agent we will create:
+
+   ```yaml
+   “I want to build an agent that helps real estate agents to find properties. When the agent describes a property, the agent will ask for specific features and a budget.”
+   ```
+
+   ![initial prompt](assets/mcsInitialPrompt.png)
+
+   - Because you set the Contoso Real Estate solution as your preferred solution, the agent will automatically be added to this solution
 
 1. **Configure the agent**
-   - **Name**: Give your agent a descriptive name (e.g., "Lab Solution Assistant")
-   - **Description**: Add a brief description of the agent's purpose
-   - **Language**: Select your preferred language
+
+   The conversational creation experience with Copilot will next load. You'll see Copilot is in progress of responding to you.
+   ![Build your agent](assets/mcsBuildAgent.png)
+
+   - Click Configure
+   - **Name**: Property finder assistant.
+   - Review the description and instructions generated.
    - Click **Create** to initialize the agent
 
-1. **Basic agent setup**
-   - Review the default greeting and system message
-   - Customize the agent's personality and tone if desired
-   - Test the basic conversation flow
+   ![create](assets/mcsCreateAgent.png)
 
-### Step 2: Add Dataverse tables as knowledge source
+   - Wait until your agent is provisioned.
+   ![Agent provisioned](assets/mcsAgentProvisioned.png)
+
+### Step 4: Add Dataverse tables as knowledge source
 
 1. **Access Knowledge sources**
-   - In your agent, navigate to **Knowledge** section
-   - Click **Add knowledge** or **+ Add source**
-
-1. **Connect to Dataverse**
+   - In your agent, navigate to the **Knowledge** section
+   - Click **+ Add knowledge**
    - Select **Dataverse** as the knowledge source type
-   - Choose **Tables** from your current environment
-   - Select the tables that were imported with your solution
-   - Configure access permissions as needed
+   ![add Dataverse](assets/mcsAddknowledgeDataverse.png)
+   - Choose the **Listing** table and click "Add to agent"
+   ![add Listings table](assets/mcsAddListingTable.png)
 
-1. **Configure knowledge source settings**
-   - Set up how the agent should use the table data
-   - Configure any filters or specific columns to include/exclude
-   - Test the knowledge source connection
-
-### Step 3: Test the agent with Dataverse knowledge
+### Step 5: Test the agent with Dataverse knowledge
 
 1. **Test knowledge integration**
    - Use the **Test** panel in Copilot Studio
-   - Ask questions that should trigger responses from your Dataverse tables
+   - Ask questions that should trigger responses from your Dataverse tables (e.g., "Show me available properties" or "What properties are in the database?")
    - Verify the agent can access and use the table data appropriately
+![test your agent](assets/mcsTestAgent.png)
 
-1. **Refine the agent behavior**
-   - Adjust the agent's instructions based on test results
-   - Fine-tune how it presents information from Dataverse
-   - Test edge cases and error scenarios
+   > **Note**: You can continue to refine the agent and add more components, but for this lab we will focus on the ALM aspect of it. If you want to explore how to build Microsoft Copilot Studio agents in depth, check out the [Agent Academy](https://microsoft.github.io/agent-academy/).
 
-### Step 4: Add agent to your solution and commit
+### Step 6: Commit the agent to source control
 
-1. **Add agent to solution**
-   - Navigate back to **Solutions** in the Power Apps maker portal
-   - Open your working solution
-   - Click **Add existing** > **Chatbot**
-   - Select your newly created agent
-   - Add it to the solution
+> **Important**: Normally, you must publish an agent before it can be committed to source control. However, for this lab, we will skip the publish step and commit the agent directly to demonstrate the ALM workflow.
 
 1. **Commit the agent to source control**
-   - Go to **Source control** tab in your solution
+   - Navigate back to **Solutions**
+   ![view solution](assets/mcsViewSolution.png)
+   - Open the **Contoso Real Estate** solution
+   - Go to the **Source control** tab
    - You should see the agent files in the pending changes
    - Add commit message: "Added Copilot Studio agent with Dataverse knowledge source"
+   ![mcsCommit](assets/mcsCommit.png)
    - Click **Commit**
 
 1. **Verify agent in repository**
-   - Check your Git repository to see the agent files
+   - Check your Git repository in Azure DevOps to see the agent files
    - Review the agent's metadata and configuration files
    - Note how the agent integrates with your overall solution structure
 
-> **Expected outcome:** You have successfully created a Copilot Studio agent that uses Dataverse tables as a knowledge source, integrated it into your Power Platform solution, and committed it to source control as part of your ALM workflow.
-> **Key insight:** AI agents are now first-class citizens in Power Platform ALM, following the same source control patterns as apps, flows, and other solution components
+![Source Code](assets/mcsSourceCode.png)
+
+> **Expected outcome:** You have successfully created a Copilot Studio agent within a solution, connected it to Dataverse tables as a knowledge source, and committed it to source control as part of your ALM workflow.
+>
+> **Key insights:**
+>
+> - Creating agents within solutions from the start makes them ALM-ready
+> - Agents follow the same source control patterns as apps, flows, and other solution components
+> - AI agents are now first-class citizens in Power Platform ALM
+>
+> **Key insights:**
+>
+> - Creating agents within solutions from the start makes them ALM-ready
+> - Agents follow the same source control patterns as apps, flows, and other solution components
+> - AI agents are now first-class citizens in Power Platform ALM
