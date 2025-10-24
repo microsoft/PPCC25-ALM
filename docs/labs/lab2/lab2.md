@@ -738,6 +738,11 @@ To make your agent ALM-ready, it must be created within a solution. This enables
 
 ### Step 5: Test the agent with Dataverse knowledge
 
+> **Note**: To test the agent effectively, you need data in the Listing table. You can either:
+>
+> - Import sample data using the [optional data import step](#step-1-import-the-solution-into-power-apps) from Task 1, or
+> - Create your own data using the Contoso Real Estate Canvas App or Model-Driven App included in the solution
+
 1. **Test knowledge integration**
    - Use the **Test** panel in Copilot Studio
    - Ask questions that should trigger responses from your Dataverse tables (e.g., "Show me available properties" or "What properties are in the database?")
