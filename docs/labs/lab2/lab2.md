@@ -102,6 +102,30 @@ In this task, we will work with the **Solution binary package** (.zip format) as
 
    ![Imported successfully](assets/ImportedSuccessfully.png)
 
+1. **Publish all customizations**
+   - After the solution import completes, open the Solution **Contoso Real Estate**
+   - Select **Publish all customizations**
+   ![publish all customizations](assets/publishCustomizations.png)
+   - Wait for the publish process to complete
+   - This ensures all components in the solution are published and ready to use
+
+1. **Import configuration data (optional)**
+   > note: This step requires [Power Platform CLI](https://learn.microsoft.com/power-platform/developer/cli/reference/data) installed in a windows machine.
+
+The Contoso Real Estate solution contains the schema and components (tables, apps, flows) but does not include sample data. If you would like to populate your environment with configuration data for testing purposes, you can import the data using PAC CLI.
+
+To import the [data](assets/ContosoRealEstateData.zip), you can use either:
+
+```powershell
+pac data import -d [file]
+```
+
+or use the Configuration Migration Tool:
+
+```powershell
+pac tool CMT
+```
+
 ### Step 2: Commit the solution using Power Platform Git integration
 
 1. **Enable Git integration** (if not already configured)
@@ -135,7 +159,10 @@ You are now connect to your GIT repository!
    - In **Solution explorer**, open the solution **Contoso Real Estate**
    - Go to **Source control** tab in your solution
    ![Source Control](assets/SourceControl.png)
-   - Add a commit message: "Initial import of [solution name]"
+      > **Important:** After setting up Git integration, all the source control components will be processed in the background. During this time, the commit functionality will be disabled. Wait until this process completes before attempting to commit. You'll know it's ready when the commit button becomes active.
+      ![processing components](assets/processingComponents.png)
+   - Click **Commit** in the ribbon
+   - Add a commit message: "Initial commit of Contoso Real Estate Solution"
    - Click **Commit** to save the solution to your Git repository
 
    ![Commit Success](assets/CommitSuccessful.png)
@@ -470,6 +497,11 @@ Professional developers often use specialized tools to compare, review, and make
    ![Conflict](assets/makerPortalConflict.png)
 
 1. **Handle the conflict**
+You can choose how you will handle this conflict.
+   - If you decide to keep changes from your environment, select **Keep current changes**.
+      - You will still need to commit your changes to update the repository. This will override the changes that were made directly in the repository.
+   - If you decide to take the changes from your reporitory, select **Accept Incoming Changes**
+      - This will discard the changes from your environment. After that, select **Pull** to bring the changes from the repository into your environment.
 
 **Scenario:** You've now simulated a real-world development situation where two developers are working on the same solution simultaneously:
 
@@ -505,6 +537,8 @@ In this task, we will simulate team development using multiple Power Platform en
    - Click **Solutions** in the left navigation
    - Select the **Contoso Real Estate** solution
    - Click **Export** in the top menu
+   - In the dialog "Before you export", click **Publish**.
+   - Click next.
    - In the export dialog, select **Unmanaged** solution type
    - Click **Export**
    - Wait for the solution to be prepared (this may take a few moments)
