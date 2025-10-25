@@ -1,90 +1,76 @@
-# Lab 4: ALM with Power Pages
+# 🧪 Lab 4: Power Pages
 
 ## Table of Contents
 
-- [Pre-requisites](#pre-requisites)
+- [Pre-requisites](#-pre-requisites)
 - [Overview](#overview)
 - [Steps](#steps)
-  1. [Configure Azure DevOps](#configure-azure-devops)
-  1. [Create solution and connect to Git](#create-solution-and-connect-to-git)
   1. [Create Power Pages site](#create-power-pages-site)
   1. [Add site to solution](#add-site-to-solution)
   1. [Configure Power Pipelines](#configure-power-pipelines)
   1. [Deploy to Prod Environment](#deploy-to-prod-environment)
-  1. [Activate Site in ProdEnvironment](#activate-site-in-prodenvironment)
+  1. [Activate Site in Prod Environment](#activate-site-in-prod-environment)
   1. [Committing changes to Source Control](#committing-changes-to-source-control)
   1. [Cloning the repository locally](#cloning-the-repository-locally)
   1. [Editing the site in VS Code](#editing-the-site-in-vs-code)
   1. [Pulling changes in Solution Explorer](#pulling-changes-in-solution-explorer)
   1. [Updating Environment Variables](#updating-environment-variables)
-  1. [Deploy the updated solution to ProdEnvironment](#deploy-the-updated-solution-to-prodenvironment)
+  1. [Deploy the updated solution to Prod Environment](#deploy-the-updated-solution-to-prod-environment)
   1. [Verify changes](#verify-changes)
-- [Steps to enable Managed Environment](#steps-to-enable-managed-environment)
 
-## Pre-requisites
+## 📋 Pre-requisites
 
+1. Complete labs 1 and 2.
 1. Install VS Code Desktop from this [download link](https://code.visualstudio.com/download).
 1. Following steps will work on EDM environments. (This should be enabled by default).
 
 ## Overview
 
-In this scenario, we will be doing the following:
+In this lab, we will be doing the following:
 
 ![Flow](images/flow.jpg)
 
 ## Steps
 
-1. Setup two managed environments, **DevEnvironment** and **ProdEnvironment**. Follow [these](#steps-to-enable-managed-environment) steps to enable managed environment.
-
-### Configure Azure DevOps
-
-1. Navigate to [Azure DevOps Portal](https://aex.dev.azure.com/) and create a new organization.
-
-    ![Create Azure DevOps Organization](images/create-ado-org.png)
-
-1. Create a new project. This will automatically create a git repository with the same name as the project.
-
-    ![Create Azure DevOps Project](images/create-ado-project.png)
-
-1. In the new project, navigate to **Repos** and initialize it with main branch.
-
-    ![Initialize Repo](images/initialize-repo.png)
-
-### Create solution and connect to Git
-
-1. In a new tab, open [Power Pages Maker Studio](https://make.powerpages.microsoft.com/) and select **DevEnvironment** from top right corner.
-
-    ![Select Environment](images/select-environment.png)
-
-1. Click on **Solutions** option from left burger icon to open Solutions Explorer.
-
-    ![Solutions Explorer](images/solution-explorer.png)
-
-1. Click on **Connect to Git** button to setup your git repository for this environment.
-
-    ![Connect to Git](images/connect-to-git.png)
-
-1. Use above created Azure DevOps project to connect to git. You can name the folder as applicable.
-
-    ![Connect to Git Repo](images/connect-to-git-repo.png)
-
 ### Create Power Pages site
 
-1. After successful connection, navigate to home and proceed to create your first power pages site **PPCC ALM Dev** using blank template.
+1. Open [Power Pages Maker Studio](https://make.powerpages.microsoft.com/) in a new tab.
 
-    ![Create Power Pages Site](images/create-power-pages-site.png)
+1. You will see the first run experience. Click on **Get Started** button.
 
-    ![Create Power Pages Site 2](images/create-power-pages-site-2.png)
+    ![Get Started](images/getting-started.png)
 
-1. Once the **PPCC ALM Dev** site is ready, navigate back to Solutions Explorer and click on **New Solution** to create a new solution.
+1. Select any industry you want, for example **Finance** and click on **Next**.
+
+    ![Select Industry](images/select-industry.png)
+
+1. Select any of the suggestions or you can also write your own prompt and click on **Build my site**.
+
+    ![Build My Site](images/select-site.png)
+
+1. Change the site name to **PPCC ALM Dev** and click on **Next**.
+
+    ![Site Name](images/site-name.png)
+
+1. If the layout looks good, click on **Next**.
+
+    ![Site Layout](images/site-layout.png)
+
+1. Select few pages to be included in the site and click on **Next**.
+
+    ![Select Pages](images/select-pages.png)
+
+1. Wait for the site to be created.
+
+### Add site to solution
+
+1. Once the **PPCC ALM Dev** site is ready, navigate to Solutions Explorer and click on **New Solution** to create a new solution.
 
     ![New Solution](images/new-solution.png)
 
 1. Name the solution **PPCCALMDev**, select **CDS Default Publisher** from Publisher dropdown and click **Create**.
 
     ![Create New Solution](images/create-new-solution.png)
-
-### Add site to solution
 
 1. Click on **Objects** from the left menu.
 
@@ -116,7 +102,7 @@ In this scenario, we will be doing the following:
 
     ![Create Pipeline](images/create-pipeline.png)
 
-1. Name the pipeline **PPCC ALM Workshop pipeline** and select **ProdEnvironment** as the target environment and click on **Save**.
+1. Name the pipeline **PPCC ALM Workshop pipeline** and select **Prod** environment as the target environment and click on **Save**.
 
     ![Create Pipeline](images/create-pipeline-2.png)
 
@@ -126,7 +112,7 @@ In this scenario, we will be doing the following:
 
 ### Deploy to Prod Environment
 
-1. Click on **Deploy Here** button to deploy the solution to ProdEnvironment.
+1. Click on **Deploy Here** button to deploy the solution to **Prod** Environment.
 
     ![Deploy Here](images/deploy-here.png)
 
@@ -140,17 +126,17 @@ In this scenario, we will be doing the following:
 
     ![Deployment in Progress](images/deployment-in-progress.png)
 
-1. Once the deployment is complete, switch to **ProdEnvironment** from top right corner in Power Pages Maker Studio.
+1. Once the deployment is complete, switch to **Prod** environment from top right corner in Power Pages Maker Studio.
 
     ![Switch Environment](images/switch-environment.png)
 
-### Activate Site in ProdEnvironment
+### Activate Site in Prod Environment
 
 1. Click on **Inactive Sites** tab to view the list of inactive sites.
 
     ![Inactive Sites](images/inactive-sites.png)
 
-1. Click on **Reactive** button to activate the site and then click on **Done**.
+1. Click on **Reactivate** button to activate the site and then click on **Done**.
 
     ![Reactivate Site](images/reactivate-site.png)
 
@@ -160,7 +146,7 @@ In this scenario, we will be doing the following:
 
 ## Committing changes to Source Control
 
-1. Go back to **DevEnvironment** and navigate to **Solutions Explorer** and select the **PPCCALMDev** solution.
+1. Go back to **Dev** environment and navigate to **Solutions Explorer** and select the **PPCCALMDev** solution.
 
 1. Select **Source Control** from the left menu.
 
@@ -211,7 +197,11 @@ In this scenario, we will be doing the following:
 
 ### Editing the site in VS Code
 
-1. Open **Home.webpage.copy.html** file and use GitHub Copilot to add a welcome message to the home page.
+1. Create a new branch by clicking on Source Control icon from the left menu and then More -> Branch -> Create New Branch. Give the branch name as **feature/add-welcome-message**
+
+    ![Create New Branch](images/create-new-branch.png)
+
+1. Open **Home.webpage.copy.html** file and use GitHub Copilot to add a welcome message to the home page. Click on **Keep** once the Copilot is completed making the changes.
 
     ![Edit Home Page](images/edit-home-page.png)
 
@@ -219,9 +209,21 @@ In this scenario, we will be doing the following:
 
     ![Commit Changes in VS Code](images/commit-changes-vscode.png)
 
+1. Now, go back to Azure DevOps repo and refresh the page. You will see a new branch created named **feature/add-welcome-message**. Click on **Create a pull request** button.
+
+    ![Create Pull Request](images/create-pull-request.png)
+
+1. You will see the changes made in the pull request. Click on **Create** button to create the pull request.
+
+1. Click on **Files** tab to review the changes and then click on **Complete** button to complete the pull request.
+
+    >**Tip**: In real-world scenarios, you would typically have another team member review the pull request before completing it.
+
+    ![Complete Pull Request](images/complete-pull-request.png)
+
 ### Pulling changes in Solution Explorer
 
-1. Go back to **Power Pages Maker Studio** in **DevEnvironment** and navigate to **Solutions Explorer**.
+1. Go back to **Power Pages Maker Studio** in **Dev** environment and navigate to **Solutions Explorer**.
 
 1. Select **Source Control** from the left menu and click on **Check for updates** button. _This might take a while._
 
@@ -275,9 +277,9 @@ In this scenario, we will be doing the following:
 
     ![Environment Variable Added](images/env-var-added.png)
 
-### Deploy the updated solution to ProdEnvironment
+### Deploy the updated solution to Prod Environment
 
-1. Go to **Pipelines** tab and click on **Deploy Here** button to deploy the updated solution to **ProdEnvironment**.
+1. Go to **Pipelines** tab and click on **Deploy Here** button to deploy the updated solution to **Prod** environment.
 
 1. Click on **Next** and you'll be asked to select a value for the environment variable. Select **No** and click on **Next**.
 
@@ -287,7 +289,7 @@ In this scenario, we will be doing the following:
 
 ### Verify changes
 
-1. Open the website preview in **DevEnvironment** by clicking on **Preview** -> **Desktop**.
+1. Open the website preview in **Dev** environment by clicking on **Preview** -> **Desktop**.
 
     ![Preview Site in DevEnvironment](images/preview-site-devenv.png)
 
@@ -295,18 +297,8 @@ In this scenario, we will be doing the following:
 
     ![Local Login Enabled](images/local-login-enabled.png)
 
-1. Now, go back to **Power Pages Maker Studio** and switch to **ProdEnvironment** from top right corner and preview the site.
+1. Now, go back to **Power Pages Maker Studio** and switch to **Prod** environment from top right corner and preview the site.
 
 1. Click on **Sign In** button to verify that the local login is disabled.
 
     ![Local Login Disabled](images/local-login-disabled.png)
-
-## Steps to enable Managed Environment
-
-1. Navigate to Power Platform Admin Center (PPAC) at <https://admin.powerplatform.microsoft.com/manage/environments>
-1. In the Manage tab on the left-hand side, click on **Environments**
-1. Select the environment where you want to enable Managed Environments
-1. In the ribbon, click **Enable Managed Environments**
-1. Click **Enable** in the fly out wizard
-
-    ![Enable Managed Environment](images/enable-managed-environment.png)
