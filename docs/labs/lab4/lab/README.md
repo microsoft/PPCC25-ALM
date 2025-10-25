@@ -3,36 +3,36 @@
 ## Table of Contents
 
 - [Pre-requisites](#-pre-requisites)
-- [Overview](#overview)
-- [Steps](#steps)
-  1. [Create Power Pages site](#create-power-pages-site)
-  1. [Add site to solution](#add-site-to-solution)
-  1. [Configure Power Pipelines](#configure-power-pipelines)
-  1. [Deploy to Prod Environment](#deploy-to-prod-environment)
-  1. [Activate Site in Prod Environment](#activate-site-in-prod-environment)
-  1. [Committing changes to Source Control](#committing-changes-to-source-control)
-  1. [Cloning the repository locally](#cloning-the-repository-locally)
-  1. [Editing the site in VS Code](#editing-the-site-in-vs-code)
-  1. [Pulling changes in Solution Explorer](#pulling-changes-in-solution-explorer)
-  1. [Updating Environment Variables](#updating-environment-variables)
-  1. [Deploy the updated solution to Prod Environment](#deploy-the-updated-solution-to-prod-environment)
-  1. [Verify changes](#verify-changes)
+- [Overview](#️-overview)
+- [Tasks](#-tasks)
+  1. [Create Power Pages site](#️-create-power-pages-site)
+  1. [Add site to solution](#-add-site-to-solution)
+  1. [Configure Power Pipelines](#-configure-power-pipelines)
+  1. [Deploy to Prod Environment](#-deploy-to-prod-environment)
+  1. [Activate Site in Prod Environment](#️-activate-site-in-prod-environment)
+  1. [Committing changes to Source Control](#️-committing-changes-to-source-control)
+  1. [Cloning the repository locally](#-cloning-the-repository-locally)
+  1. [Editing the site in VS Code](#-editing-the-site-in-vs-code)
+  1. [Pulling changes in Solution Explorer](#️-pulling-changes-in-solution-explorer)
+  1. [Updating Environment Variables](#️-updating-environment-variables)
+  1. [Deploy the updated solution to Prod Environment](#️-deploy-the-updated-solution-to-prod-environment)
+  1. [Verify changes](#-verify-changes)
+  1. [_Optional: Manage and deploy Single Page Application using Power Pages_](#-optional-manage-and-deploy-single-page-application-using-power-pages)
 
 ## 📋 Pre-requisites
 
 1. Complete labs 1 and 2.
 1. Install VS Code Desktop from this [download link](https://code.visualstudio.com/download).
+1. Install Git from this [download link](https://git-scm.com/install/windows).
 1. Following steps will work on EDM environments. (This should be enabled by default).
 
-## Overview
+## 🗒️ Overview
 
-In this lab, we will be doing the following:
+In this lab, you will learn how to create a Power Pages site, add it to a solution, and set up Power Pipelines for deploying the solution to a production environment. You will also learn how to commit changes to source control using Azure DevOps and make edits to the site using VS Code with GitHub Copilot.
 
-![Flow](images/flow.jpg)
+## 🎯 Tasks
 
-## Steps
-
-### Create Power Pages site
+### 🏗️ Create Power Pages site
 
 1. Open [Power Pages Maker Studio](https://make.powerpages.microsoft.com/) in a new tab.
 
@@ -62,7 +62,7 @@ In this lab, we will be doing the following:
 
 1. Wait for the site to be created.
 
-### Add site to solution
+### 📦 Add site to solution
 
 1. Once the **PPCC ALM Dev** site is ready, navigate to Solutions Explorer and click on **New Solution** to create a new solution.
 
@@ -92,7 +92,7 @@ In this lab, we will be doing the following:
 
     ![Solution with Site](images/solution-with-site.png)
 
-### Configure Power Pipelines
+### 🚀 Configure Power Pipelines
 
 1. Select the newly created solution and click on **Pipelines** from the left menu.
 
@@ -110,7 +110,7 @@ In this lab, we will be doing the following:
 
     ![Pipeline Created](images/pipeline-created.png)
 
-### Deploy to Prod Environment
+### 🚀 Deploy to Prod Environment
 
 1. Click on **Deploy Here** button to deploy the solution to **Prod** Environment.
 
@@ -130,7 +130,7 @@ In this lab, we will be doing the following:
 
     ![Switch Environment](images/switch-environment.png)
 
-### Activate Site in Prod Environment
+### 🏗️ Activate Site in Prod Environment
 
 1. Click on **Inactive Sites** tab to view the list of inactive sites.
 
@@ -144,7 +144,7 @@ In this lab, we will be doing the following:
 
     ![Preview Site](images/preview-site.png)
 
-## Committing changes to Source Control
+### 🛠️ Committing changes to Source Control
 
 1. Go back to **Dev** environment and navigate to **Solutions Explorer** and select the **PPCCALMDev** solution.
 
@@ -171,7 +171,7 @@ In this lab, we will be doing the following:
 
     ![Repository Structure](images/repo-structure.png)
 
-### Cloning the repository locally
+### 💻 Cloning the repository locally
 
 1. Click on **Files** from the left menu in Azure DevOps to go to the repository view.
 
@@ -195,7 +195,7 @@ In this lab, we will be doing the following:
 
     ![Cloned Repository in VS Code](images/cloned-repo-vscode.png)
 
-### Editing the site in VS Code
+### 💻 Editing the site in VS Code
 
 1. Create a new branch by clicking on Source Control icon from the left menu and then More -> Branch -> Create New Branch. Give the branch name as **feature/add-welcome-message**
 
@@ -221,7 +221,7 @@ In this lab, we will be doing the following:
 
     ![Complete Pull Request](images/complete-pull-request.png)
 
-### Pulling changes in Solution Explorer
+### 🛠️ Pulling changes in Solution Explorer
 
 1. Go back to **Power Pages Maker Studio** in **Dev** environment and navigate to **Solutions Explorer**.
 
@@ -233,7 +233,7 @@ In this lab, we will be doing the following:
 
     ![Pull Changes](images/pull-changes.png)
 
-### Updating Environment Variables
+### 🛠️ Updating Environment Variables
 
 1. From the **Active Sites** tab, click on **Power Pages Management** for your site.
 
@@ -277,7 +277,7 @@ In this lab, we will be doing the following:
 
     ![Environment Variable Added](images/env-var-added.png)
 
-### Deploy the updated solution to Prod Environment
+### 🛠️ Deploy the updated solution to Prod Environment
 
 1. Go to **Pipelines** tab and click on **Deploy Here** button to deploy the updated solution to **Prod** environment.
 
@@ -287,7 +287,7 @@ In this lab, we will be doing the following:
 
 1. Click on **Deploy** to start the deployment process and wait for the deployment to complete.
 
-### Verify changes
+### 🔍 Verify changes
 
 1. Open the website preview in **Dev** environment by clicking on **Preview** -> **Desktop**.
 
@@ -302,3 +302,29 @@ In this lab, we will be doing the following:
 1. Click on **Sign In** button to verify that the local login is disabled.
 
     ![Local Login Disabled](images/local-login-disabled.png)
+
+### ❗ _Optional: Manage and deploy Single Page Application using Power Pages_
+
+#### Enable JS extensions for your environments
+
+1. Go to [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/) and select your **Dev** environment.
+
+1. Click on **Settings** and search for **Blocked Attachments**.
+
+    ![Search Blocked Attachments](images/search-blocked-attachments.png)
+
+1. Remove **.js** from the list of blocked attachments and click on **Save**.
+
+    ![Remove .js from Blocked Attachments](images/remove-js-from-blocked-attachments.png)
+
+1. Repeat the same steps for **Prod** environment.
+
+#### Local project setup
+
+1. Open a terminal and run `git clone https://github.com/microsoft/power-pages-samples.git` command to clone the [Power Pages samples repo](https://aka.ms/powerpages-samples) locally.
+
+1. Navigate to `samples/bring-your-own-code/react/car-sales-website` folder and open it in VS Code.
+
+1. Complete the steps provided in the [README.md](https://github.com/microsoft/power-pages-samples/tree/main/samples/bring-your-own-code/react/car-sales-website#readme) file to set up the local project and upload the website to **Dev** environment.
+
+1. Follow the same steps as above to add the site to a solution and deploy it to **Prod** environment using Power Pipelines.
