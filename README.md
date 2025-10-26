@@ -30,7 +30,7 @@ Whether you're a Center of Excellence leader, IT admin, or solution architect, y
 
 ## 🚀 Getting Started
 
-> **💡 Tip:** For a browser-friendly visualization, visit <https://microsoft.github.io/PPCC25-ALM>
+> **💡 Tip:** For a browser-friendly visualization, visit [https://microsoft.github.io/PPCC25-ALM](https://microsoft.github.io/PPCC25-ALM)
 
 1. Start with [Lab 1: Setup](docs/labs/lab1/lab1.md)
 1. Follow the labs in sequence
