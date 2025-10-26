@@ -14,15 +14,19 @@ You'll learn how to implement modern ALM strategies using built-in features like
 
 Whether you're a Center of Excellence leader, IT admin, or solution architect, you'll leave with the tools and templates to implement lifecycle best practices that are agent-ready and enterprise-proven.
 
-## 📅 Schedule
+## 📅 Agenda
 
-| Lab | Time | Presenter(s) | Topic |
-| --- | --- | --- | --- |
-| [Lab 1](labs/lab1/lab1.md) | 9:00 AM | Casey, Prabhat | Solution and DevOps 101 |
-| [Lab 2](labs/lab2/lab2.md) | 10:30 AM | Marcel | Building Power Platform Solutions |
-| [Lab 3](labs/lab3/lab3.md) | 1:00 PM | Yash | Deploy From Source Control |
-| [Lab 4](labs/lab4/lab4.md) | 2:00 PM | Ashish, Priyanshu | Lifecycle Mastery in Power Pages |
-| - | 3:30 PM | All | AMA |
+| Lab | Time | Topic |
+| --- | --- | --- |
+| Presentation | 9:00 AM | Solutions and DevOps 101 |
+| [Lab 1](labs/lab1/lab1.md) | 9:20 AM | Setup and configure |
+| [Lab 2](labs/lab2/lab2.md) | 9:40 AM | Building Power Platform Solutions |
+| Coffee | 10:00 AM | Coffee break |
+| [Lab 2 (cont)](labs/lab2/lab2.md) | 10:15 AM | Building Power Platform Solutions |
+| Lunch | 11:45 AM | Lunch |
+| [Lab 3](labs/lab3/lab3.md) | 12:45 PM | Deploy |
+| [Lab 4](labs/lab4/lab4.md) | 2:15 PM | Lifecycle Mastery in Power Pages |
+| Presentation | 3:00 PM | Best practices & Q&A |
 
 ## 🚀 Getting Started
 
