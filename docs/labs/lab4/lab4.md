@@ -10,10 +10,10 @@ This lab requires **Visual Studio Code** to be installed on your machine for the
 
 Before starting this lab, please review the following setup guides:
 
-- 📁 [**Create a GitHub Account**](../../howto/CREATE%20GITHUB.md) - Step-by-step guide to set up your GitHub account
-- 🔄 [**Fork the Repository**](../../howto/FORK%20REPO.md) - Learn how to create your own copy of this workshop repository  
-- ☁️ [**Create a GitHub Codespace**](../../howto/CREATE%20CODESPACE.md) - Set up a cloud-based development environment (if you don't have VS Code installed)
-- 🔌 [**Power Platform CLI Setup**](../../howto/PAC%20CLI.md) - Connect to Power Platform using the command-line interface
+- 📁 [**Create a GitHub Account**](../../howto/CREATE-GITHUB.md) - Step-by-step guide to set up your GitHub account
+- 🔄 [**Fork the Repository**](../../howto/FORK-REPO.md) - Learn how to create your own copy of this workshop repository  
+- ☁️ [**Create a GitHub Codespace**](../../howto/CREATE-CODESPACE.md) - Set up a cloud-based development environment (if you don't have VS Code installed)
+- 🔌 [**Power Platform CLI Setup**](../../howto/PAC-CLI.md) - Connect to Power Platform using the command-line interface
 
 ## 🎯 What You'll Learn
 
