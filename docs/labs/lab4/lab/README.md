@@ -319,7 +319,7 @@ In this lab, you will learn how to create a Power Pages site, add it to a soluti
 
 1. Repeat the same steps for **Prod** environment.
 
-#### Local project setup
+#### Deploy Single Page Application site to Power Pages
 
 1. Open a terminal and run `git clone https://github.com/microsoft/power-pages-samples.git` command to clone the [Power Pages samples repo](https://aka.ms/powerpages-samples) locally.
 
@@ -327,4 +327,56 @@ In this lab, you will learn how to create a Power Pages site, add it to a soluti
 
 1. Complete the steps provided in the [README.md](https://github.com/microsoft/power-pages-samples/tree/main/samples/bring-your-own-code/react/car-sales-website#readme) file to set up the local project and upload the website to **Dev** environment.
 
+1. Switch to **Prod** environment and import the solution imported in **Dev** environment earlier to ensure the dependencies are met.
+
 1. Follow the same steps as above to add the site to a solution and deploy it to **Prod** environment using Power Pipelines.
+
+## Optional: Supercharge your Power Pages development with Power Platform Tools VS Code Extension and PAC MCP Server
+
+Power Platform Tools is a Visual Studio Code extension that streamlines the development and management of Power Pages sites. It offers features such as:
+
+- Copilot for Power Pages
+- Liquid intellisense support
+- Seamless creation of new content like web pages, web templates etc. using right-click context menus.
+- Power Pages Actions: A single place to manage all your Power Pages sites including site upload/download and site preview.
+
+### Install Power Platform Tools Extension
+
+1. Open VS Code Desktop.
+1. Click on the Extensions icon from the left menu.
+1. Search for **Power Platform Tools** and click on **Install**.
+
+    ![Install Power Platform Tools Extension](images/install-power-platform-tools.png)
+
+1. After installation, the extension will ask you to login. Use the same credentials you are using for Power Pages Maker Studio.
+
+1. You can also install it from this [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode).
+
+### Install PAC MCP Server
+
+1. Ensure you have latest .NET installed.
+1. Download PAC CLI by running below command in terminal:
+
+    ```powershell
+    dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+    ```
+
+1. Run below command to get the MCP Server location:
+
+    ```powershell
+    pac copilot mcp
+    ```
+
+1. This will print out the MCP Server location. Copy the URL and add in your VS Code. It should look something like below:
+
+    ```json
+    "pac-mcp": {
+        "type": "stdio",
+        "command": "<MCP Server Location>",
+        "args": []
+    }
+    ```
+
+1. You can now use GitHub Copilot to manage your Power Pages sites using natural language.
+
+    ![Power Pages MCP](images/pac-mcp.png)
