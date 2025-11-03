@@ -26,7 +26,7 @@ Whether you're a Center of Excellence leader, IT admin, or solution architect, y
 | Lunch | 11:45 AM | Lunch |
 | [Lab 3](docs/labs/lab3/lab3.md) | 12:45 PM | Deploy |
 | [Lab 4](docs/labs/lab4/lab4.md) | 2:15 PM | Lifecycle Mastery in Power Pages |
-| Presentation | 3:00 PM | Best practices & Q&A |
+| [Presentation](/docs/PPCC25%20ALM%20Workshop%20Presentation.pdf) | 3:00 PM | Best practices & Q&A |
 
 ## 🚀 Getting Started
 
